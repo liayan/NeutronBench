@@ -14,7 +14,7 @@ pip install -r requirements.txt
 ```bash
 cd neutron-sanzo/exp/Partition
 
-git clone git@github.com:MITIBMxGraph/METIS-GKlib.git
+git clone https://github.com/MITIBMxGraph/METIS-GKlib.git
 cd METIS-GKlib
 make config shared=1 cc=gcc prefix=$(realpath ../pkgs) i64=1 r64=1 gklib_path=GKlib/
 make install
@@ -27,7 +27,7 @@ cd ..
 ```bash
 cd neutron-sanzo/exp/Partition
 
-git clone git@github.com:MITIBMxGraph/torch-metis.git
+git clone https://github.com/MITIBMxGraph/torch-metis.git
 cd torch-metis
 python setup.py install
 cd ..
