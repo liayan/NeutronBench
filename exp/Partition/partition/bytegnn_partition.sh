@@ -3,7 +3,7 @@ g++ -std=c++14 -pthread  bytegnn_partition.cpp  -o bytegnn
 
 dataset_list=('ogbn-arxiv' 'ogbn-products' 'reddit' 'amazon')
 
-data_dir=~/NeutronBench/data
+data_dir=/workspace/NeutronBench/data
 
 for dataset in ${dataset_list[*]}
 do  
