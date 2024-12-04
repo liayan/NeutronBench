@@ -58,43 +58,43 @@ cd build && make -j $(nproc) && cd ..
 # ## cora
 # echo "run cora dataset..."
 # new_cfg 2708 1433-64-7 ./data/cora/cora GCNNEIGHBOR 10-25 64 200 0 0.01 0.0001 0.5
-# mpiexec -np $h ./build/nts tmp.cfg > ./log/cora_seq.log
+# mpiexec --allow-run-as-root -np $h ./build/nts tmp.cfg > ./log/cora_seq.log
 # new_cfg 2708 1433-64-7 ./data/cora/cora GCNNEIGHBOR 10-25 64 200 1 0.01 0.0001 0.5
-# mpiexec -np $h ./build/nts tmp.cfg > ./log/cora_shuffle.log
+# mpiexec --allow-run-as-root -np $h ./build/nts tmp.cfg > ./log/cora_shuffle.log
 # new_cfg 2708 1433-64-7 ./data/cora/cora GCNNEIGHBOR 10-25 64 200 2 0.01 0.0001 0.5
-# mpiexec -np $h ./build/nts tmp.cfg > ./log/cora_rand.log
+# mpiexec --allow-run-as-root -np $h ./build/nts tmp.cfg > ./log/cora_rand.log
 # new_cfg 2708 1433-64-7 ./data/cora/cora GCNNEIGHBOR 10-25 64 200 3 0.01 0.0001 0.5
-# mpiexec -np $h ./build/nts tmp.cfg > ./log/cora_low.log
+# mpiexec --allow-run-as-root -np $h ./build/nts tmp.cfg > ./log/cora_low.log
 # new_cfg 2708 1433-64-7 ./data/cora/cora GCNNEIGHBOR 10-25 64 200 4 0.01 0.0001 0.5
-# mpiexec -np $h ./build/nts tmp.cfg > ./log/cora_upper.log
+# mpiexec --allow-run-as-root -np $h ./build/nts tmp.cfg > ./log/cora_upper.log
 
 
 # ## citeseer
 # echo "run citeseer dataset..."
 # new_cfg 3327 3703-128-6 ./data/citeseer/citeseer GCNNEIGHBOR 10-25 64 200 0 0.01 0.0001 0.5
-# mpiexec -np $h ./build/nts tmp.cfg > ./log/citeseer_seq.log
+# mpiexec --allow-run-as-root -np $h ./build/nts tmp.cfg > ./log/citeseer_seq.log
 # new_cfg 3327 3703-128-6 ./data/citeseer/citeseer GCNNEIGHBOR 10-25 64 200 1 0.01 0.0001 0.5
-# mpiexec -np $h ./build/nts tmp.cfg > ./log/citeseer_shuffle.log
+# mpiexec --allow-run-as-root -np $h ./build/nts tmp.cfg > ./log/citeseer_shuffle.log
 # new_cfg 3327 3703-128-6 ./data/citeseer/citeseer GCNNEIGHBOR 10-25 64 200 2 0.01 0.0001 0.5
-# mpiexec -np $h ./build/nts tmp.cfg > ./log/citeseer_rand.log
+# mpiexec --allow-run-as-root -np $h ./build/nts tmp.cfg > ./log/citeseer_rand.log
 # new_cfg 3327 3703-128-6 ./data/citeseer/citeseer GCNNEIGHBOR 10-25 64 200 3 0.01 0.0001 0.5
-# mpiexec -np $h ./build/nts tmp.cfg > ./log/citeseer_low.log
+# mpiexec --allow-run-as-root -np $h ./build/nts tmp.cfg > ./log/citeseer_low.log
 # new_cfg 3327 3703-128-6 ./data/citeseer/citeseer GCNNEIGHBOR 10-25 64 200 4 0.01 0.0001 0.5
-# mpiexec -np $h ./build/nts tmp.cfg > ./log/citeseer_upper.log
+# mpiexec --allow-run-as-root -np $h ./build/nts tmp.cfg > ./log/citeseer_upper.log
 
 
 ## pubmed
 # echo "run pubmed dataset..."
 # new_cfg 19717 500-256-3 ./data/pubmed/pubmed GCNNEIGHBOR 10-25 64 200 0 0.01 0.0001 0.5
-# mpiexec -hostfile hostfile -np $h ./build/nts tmp.cfg > ./log/pubmed_seq.log
+# mpiexec --allow-run-as-root -hostfile hostfile -np $h ./build/nts tmp.cfg > ./log/pubmed_seq.log
 # new_cfg 19717 500-256-3 ./data/pubmed/pubmed GCNNEIGHBOR 10-25 64 200 1 0.01 0.0001 0.5
-# mpiexec -hostfile hostfile -np $h ./build/nts tmp.cfg > ./log/pubmed_shuffle.log
+# mpiexec --allow-run-as-root -hostfile hostfile -np $h ./build/nts tmp.cfg > ./log/pubmed_shuffle.log
 # new_cfg 19717 500-256-3 ./data/pubmed/pubmed GCNNEIGHBOR 10-25 64 200 2 0.01 0.0001 0.5
-# mpiexec -hostfile hostfile -np $h ./build/nts tmp.cfg > ./log/pubmed_rand.log
+# mpiexec --allow-run-as-root -hostfile hostfile -np $h ./build/nts tmp.cfg > ./log/pubmed_rand.log
 # new_cfg 19717 500-256-3 ./data/pubmed/pubmed GCNNEIGHBOR 10-25 64 200 3 0.01 0.0001 0.5
-# mpiexec -hostfile hostfile -np $h ./build/nts tmp.cfg > ./log/pubmed_low.log
+# mpiexec --allow-run-as-root -hostfile hostfile -np $h ./build/nts tmp.cfg > ./log/pubmed_low.log
 # new_cfg 19717 500-256-3 ./data/pubmed/pubmed GCNNEIGHBOR 10-25 64 200 4 0.01 0.0001 0.5
-# mpiexec -hostfile hostfile -np $h ./build/nts tmp.cfg > ./log/pubmed_upper.log
+# mpiexec --allow-run-as-root -hostfile hostfile -np $h ./build/nts tmp.cfg > ./log/pubmed_upper.log
 
 h=8
 sync './build/nts' $(pwd)/build
@@ -102,19 +102,19 @@ sync './build/nts' $(pwd)/build
 echo "run reddit dataset..."
 new_cfg 232965 602-128-41 ./data/reddit/reddit GCNNEIGHBOR 10-15-25 1024 100 0 0.01 0.0001 0.5
 sync tmp.cfg $(pwd)
-mpiexec -hostfile hostfile -np $h ./build/nts tmp.cfg > ./log/reddit_seq.log 
+mpiexec --allow-run-as-root -hostfile hostfile -np $h ./build/nts tmp.cfg > ./log/reddit_seq.log 
 new_cfg 232965 602-128-41 ./data/reddit/reddit GCNNEIGHBOR 10-15-25 1024 100 1 0.01 0.0001 0.5
 sync tmp.cfg $(pwd)
-mpiexec -hostfile hostfile -np $h ./build/nts tmp.cfg > ./log/reddit_shuffle.log
+mpiexec --allow-run-as-root -hostfile hostfile -np $h ./build/nts tmp.cfg > ./log/reddit_shuffle.log
 new_cfg 232965 602-128-41 ./data/reddit/reddit GCNNEIGHBOR 10-15-25 1024 100 2 0.01 0.0001 0.5
 sync tmp.cfg $(pwd)
-mpiexec -hostfile hostfile -np $h ./build/nts tmp.cfg > ./log/reddit_rand.log 
+mpiexec --allow-run-as-root -hostfile hostfile -np $h ./build/nts tmp.cfg > ./log/reddit_rand.log 
 new_cfg 232965 602-128-41 ./data/reddit/reddit GCNNEIGHBOR 10-15-25 1024 100 3 0.01 0.0001 0.5
 sync tmp.cfg $(pwd)
-mpiexec -hostfile hostfile -np $h ./build/nts tmp.cfg > ./log/reddit_low.log
+mpiexec --allow-run-as-root -hostfile hostfile -np $h ./build/nts tmp.cfg > ./log/reddit_low.log
 new_cfg 232965 602-128-41 ./data/reddit/reddit GCNNEIGHBOR 10-15-25 1024 100 4 0.01 0.0001 0.5
 sync tmp.cfg $(pwd)
-mpiexec -hostfile hostfile -np $h ./build/nts tmp.cfg > ./log/reddit_upper.log 
+mpiexec --allow-run-as-root -hostfile hostfile -np $h ./build/nts tmp.cfg > ./log/reddit_upper.log 
 
 exit
 
@@ -124,19 +124,19 @@ sync './build/nts' $(pwd)/build
 echo "run arxiv dataset..."
 new_cfg 169343 128-256-256-40 ./data/ogbn-arxiv/ogbn-arxiv GCNNEIGHBOR 10-15-25 1024 100 0 0.01 0.0001 0.5
 sync tmp.cfg $(pwd)
-mpiexec -hostfile hostfile -np $h ./build/nts tmp.cfg > ./log/arxiv_seq.log 
+mpiexec --allow-run-as-root -hostfile hostfile -np $h ./build/nts tmp.cfg > ./log/arxiv_seq.log 
 new_cfg 169343 128-256-256-40 ./data/ogbn-arxiv/ogbn-arxiv GCNNEIGHBOR 10-15-25 1024 100 1 0.01 0.0001 0.5
 sync tmp.cfg $(pwd)
-mpiexec -hostfile hostfile -np $h ./build/nts tmp.cfg > ./log/arxiv_shuffle.log
+mpiexec --allow-run-as-root -hostfile hostfile -np $h ./build/nts tmp.cfg > ./log/arxiv_shuffle.log
 new_cfg 169343 128-256-256-40 ./data/ogbn-arxiv/ogbn-arxiv GCNNEIGHBOR 10-15-25 1024 100 2 0.01 0.0001 0.5
 sync tmp.cfg $(pwd)
-mpiexec -hostfile hostfile -np $h ./build/nts tmp.cfg > ./log/arxiv_rand.log 
+mpiexec --allow-run-as-root -hostfile hostfile -np $h ./build/nts tmp.cfg > ./log/arxiv_rand.log 
 new_cfg 169343 128-256-256-40 ./data/ogbn-arxiv/ogbn-arxiv GCNNEIGHBOR 10-15-25 1024 100 3 0.01 0.0001 0.5
 sync tmp.cfg $(pwd)
-mpiexec -hostfile hostfile -np $h ./build/nts tmp.cfg > ./log/arxiv_low.log
+mpiexec --allow-run-as-root -hostfile hostfile -np $h ./build/nts tmp.cfg > ./log/arxiv_low.log
 new_cfg 169343 128-256-256-40 ./data/ogbn-arxiv/ogbn-arxiv GCNNEIGHBOR 10-15-25 1024 100 4 0.01 0.0001 0.5
 sync tmp.cfg $(pwd)
-mpiexec -hostfile hostfile -np $h ./build/nts tmp.cfg > ./log/arxiv_upper.log 
+mpiexec --allow-run-as-root -hostfile hostfile -np $h ./build/nts tmp.cfg > ./log/arxiv_upper.log 
 
 
 # python draw.py

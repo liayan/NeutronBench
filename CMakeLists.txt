@@ -162,6 +162,6 @@ endif()
 
 
 # quick test for debugging purpose
-# mpiexec -np $1 ./build/nts $2
+# mpiexec --allow-run-as-root -np $1 ./build/nts $2
 # releated issue https://github.com/google/sanitizers/issues/629
 # we have to export those variables to prevent cuda panic while using address sanitizer

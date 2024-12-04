@@ -7,6 +7,10 @@ import copy
 # datasets = ['ppi', 'ppi-large', 'reddit', 'flickr', 'yelp', 'amazon']
 # batch_size = {'ppi':4096, 'ppi-large':4096, 'flickr':40960, 'yelp':40960, 'amazon':40960, 'reddit':40960}
 
+datasets = ['reddit']
+batch_size = {'reddit':40960}
+
+
 init_command = [
     "WEIGHT_DECAY:0.0001",
     "DROP_RATE:0.5",
