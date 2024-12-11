@@ -210,12 +210,13 @@ if __name__ == '__main__':
     datasets = ['ogbn-papers100M']
     datasets = ['ogbn-arxiv']
     datasets = ['amazon']
-    datasets = ['ogbn-products', 'reddit']
     datasets = ['ogbn-products']
+    datasets = ['amazon', 'ogbn-products', 'reddit']
 
-    algo = ['metis1', 'metis2', 'metis4', 'dgl', 'bytegnn', 'pagraph', 'hash']
+
     algo = ['pagraph']
     algo = ['dgl']
+    algo = ['metis1', 'metis2', 'metis4', 'dgl', 'bytegnn', 'pagraph', 'hash']
 
     # partition_exp(datasets, 2048, '10,25', 4,  algo)
     partition_exp(datasets, 6000, '10,25', 4, algo)
