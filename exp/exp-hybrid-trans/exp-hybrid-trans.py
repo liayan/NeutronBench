@@ -151,7 +151,7 @@ def hybrid_trans(datasets,
 
 
 if __name__ == '__main__':
-    create_dir('./build')
+    create_dir('../build')
     os.system('cd ../build && cmake ../.. && make -j $(nproc) && cd -')
 
     datasets = ['livejournal', 'lj-large', 'lj-links']
