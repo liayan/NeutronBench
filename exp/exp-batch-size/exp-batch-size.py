@@ -143,9 +143,8 @@ if __name__ == '__main__':
     os.system('cd ../build && cmake ../.. && make -j $(nproc) && cd -')
 
     batch_sizes = {
-        'ogbn-arxiv':
-        (32, 64, 128, 512, 1024, 2048, 4096, 8192, 16384, 32768, 65536, 90941),
-        'reddit': (32, 64, 512, 2048, 8192, 32768, 131072, 153431),
+        'ogbn-arxiv': (32, 64, 128, 512, 1024, 2048, 4096, 8192, 16384, 32768, 65536, 90941),
+        'reddit': (32, 64, 128, 512, 1024, 2048, 4096, 8192, 16384, 32768, 65536, 131072, 153431),
         'ogbn-products': (32, 64, 128, 512, 1024, 2048, 4096, 8192, 16384,
                           32768, 65536, 131072, 196615),
     }
@@ -156,7 +155,6 @@ if __name__ == '__main__':
         'ogbn-products': 300,
     }
 
-    # datasets = ['reddit', 'ogbn-products']
-    datasets = []
+    datasets = ['reddit', 'ogbn-products']
     # exp2(datasets, batch_sizes, run_times, '../log/batch-size-nts-old-adam', 0.001)
     exp2(datasets, batch_sizes, run_times, './log', 0.001)
