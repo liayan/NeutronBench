@@ -208,7 +208,7 @@ def explicit_breakdown(datasets):
 
 
 if __name__ == '__main__':
-    create_dir('./build')
+    create_dir('../build')
     os.system('cd ../build && cmake ../.. && make -j $(nproc) && cd -')
     datasets = ['livejournal', 'lj-large', 'lj-links']
     datasets = ['enwiki-links', 'livejournal', 'lj-large', 'lj-links']
@@ -243,6 +243,8 @@ if __name__ == '__main__':
         'ogbn-arxiv', 'reddit', 'livejournal', 'lj-links', 'lj-large',
         'enwiki-links', 'ogbn-products'
     ]
-
+    datasets = [
+        'ogbn-products', 'livejournal', 'lj-links'
+    ]
     # explicit_breakdown(datasets)
     different_optim(datasets)
