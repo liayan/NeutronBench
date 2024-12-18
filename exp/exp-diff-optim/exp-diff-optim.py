@@ -240,7 +240,7 @@ def unfied_optimization(datasets):
 
 
 if __name__ == '__main__':
-    create_dir('./build')
+    create_dir('../build')
     os.system('cd ../build && cmake ../.. && make -j $(nproc) && cd -')
     datasets = ['dewiki-2013', 'frwiki-2013', 'dblp-2011']
     datasets = ['itwiki-2013', 'enwiki-2016', 'hollywood-2011', 'enwiki-2016']
@@ -249,6 +249,9 @@ if __name__ == '__main__':
         'ogbn-arxiv', 'ogbn-products'
     ]
     datasets = ['ogbn-arxiv']
+    datasets = [
+        'reddit', 'livejournal', 'lj-links', 'lj-large', 'enwiki-links'
+    ]
     # explicit_breakdown(datasets)
     different_optim(datasets)
     unfied_optimization(datasets)
