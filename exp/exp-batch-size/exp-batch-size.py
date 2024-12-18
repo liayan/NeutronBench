@@ -139,8 +139,8 @@ def exp2(datasets, batch_sizes, run_times, log_path, lr_=0.01):
 
 
 if __name__ == '__main__':
-    create_dir('./build')
-    os.system('cd build && make -j $(nproc) && cd ..')
+    create_dir('../build')
+    os.system('cd ../build && cmake ../.. && make -j $(nproc) && cd -')
 
     batch_sizes = {
         'ogbn-arxiv':
