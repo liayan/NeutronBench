@@ -1,0 +1,61 @@
+algorithm	:	GCNNEIGHBORGPU
+vertices	:	2449029
+epochs		:	3
+layers		:	100-128-47
+fanout		:	10,25
+val_fanout	:	10,25
+batch_size	:	32
+val_batch_size	:	0
+batch_type	:	shuffle
+del_frac	:	0
+dataset:	:	ogbn-products
+edge_file	:	../../data/ogbn-products/ogbn-products.edge
+feature_file	:	../../data/ogbn-products/ogbn-products.feat
+label_file	:	../../data/ogbn-products/ogbn-products.label
+mask_file	:	../../data/ogbn-products/ogbn-products.mask
+proc_overlap	:	0
+proc_local	:	0
+proc_cuda	:	0
+proc_rep	:	0
+lock_free	:	1
+optim_kernel	:	0
+learn_rate	:	0.001
+weight_decay	:	0.0001
+decay_rate	:	0.97
+decay_epoch	:	100
+drop_rate	:	0.5
+classes		:	1
+batch_norm	:	0
+time_skip	:	3
+runs		:	1
+mini_pull	:	1
+sample_rate	:	-1
+run_time	:	300
+batch_switch_time:	-1
+batch_size_vec_string:	
+sample_switch_time:	-1
+sample_rate_vec_string:	
+lower_fanout	:	0
+cache_rate	:	0
+cache_policy	:	degree
+cache_type	:	gpu_memory
+batch_switch_acc:	-1
+pipelines	:	1
+threads		:	-1
+mode		:	zerocopy
+best_parameter	:	0
+threshold_trans	:	-1
+cache_rate_start	:	0
+cache_rate_end	:	0
+cache_rate_num	:	0
+trans_threshold_start	:	0
+trans_threshold_end	:	0
+trans_threshold_num	:	0
+block_size	:	256
+cache_exp	:	0
+part_num	:	0
+part_algo	:	
+part_dim	:	0
+target_degree	:	0
+------------------input info--------------
+../../data/ogbn-products/ogbn-products.edge file_size is not correct!

@@ -1,0 +1,566 @@
+algorithm	:	GCNNEIGHBORGPU
+vertices	:	169343
+epochs		:	3
+layers		:	128-128-40
+fanout		:	10,25
+val_fanout	:	10,25
+batch_size	:	128
+val_batch_size	:	0
+batch_type	:	shuffle
+del_frac	:	0
+dataset:	:	ogbn-arxiv
+edge_file	:	../data/ogbn-arxiv/ogbn-arxiv.edge
+feature_file	:	../data/ogbn-arxiv/ogbn-arxiv.feat
+label_file	:	../data/ogbn-arxiv/ogbn-arxiv.label
+mask_file	:	../data/ogbn-arxiv/ogbn-arxiv.mask
+proc_overlap	:	0
+proc_local	:	0
+proc_cuda	:	0
+proc_rep	:	0
+lock_free	:	1
+optim_kernel	:	0
+learn_rate	:	0.001
+weight_decay	:	0.0001
+decay_rate	:	0.97
+decay_epoch	:	100
+drop_rate	:	0.5
+classes		:	1
+batch_norm	:	0
+time_skip	:	3
+runs		:	1
+mini_pull	:	1
+sample_rate	:	-1
+run_time	:	300
+batch_switch_time:	-1
+batch_size_vec_string:	
+sample_switch_time:	-1
+sample_rate_vec_string:	
+lower_fanout	:	0
+cache_rate	:	0
+cache_policy	:	degree
+cache_type	:	gpu_memory
+batch_switch_acc:	-1
+pipelines	:	1
+threads		:	-1
+mode		:	zerocopy
+best_parameter	:	0
+threshold_trans	:	-1
+cache_rate_start	:	0
+cache_rate_end	:	0
+cache_rate_num	:	0
+trans_threshold_start	:	0
+trans_threshold_end	:	0
+trans_threshold_num	:	0
+block_size	:	256
+cache_exp	:	0
+part_num	:	0
+part_algo	:	
+part_dim	:	0
+target_degree	:	0
+------------------input info--------------
+NeutronStar::Preprocessing[Generate Full Replicated Graph Topo]
+------------------finish graph preprocessing--------------
+
+read_finish
+2025-01-08 18:30:10 [GCN_GPU_NEIGHBOR.hpp:1333 :run] INFO  - GNNmini::[Dist.GPU.GCNimpl] running [3] Epoches
+
+destrory_stream 0x5733bbddc620destory_Stream is done
+set cuda_steram 0x5733bbddc620 to 0x5733bbd8d570
+set cuda_steram 0x5733bbd8d570 to 0x5733bbd8d570
+2025-01-08 18:30:10 [ntsSampler.hpp:261 :update_batch_size] DEBUG - batch_size switch to 128
+train sampler 25, 10, 
+2025-01-08 18:30:10 [ntsSampler.hpp:261 :update_batch_size] DEBUG - batch_size switch to 128
+2025-01-08 18:30:10 [ntsSampler.hpp:261 :update_batch_size] DEBUG - batch_size switch to 29799
+val sampler 25, 10, 
+val subgraph sampler 25, 10, 
+2025-01-08 18:30:10 [ntsSampler.hpp:261 :update_batch_size] DEBUG - batch_size switch to 128
+test sampler 25, 10, 
+test subgraph sampler 25, 10, 
+2025-01-08 18:30:10 [GCN_GPU_NEIGHBOR.hpp:1415 :run] INFO  - label rate: 1.000, train/val/test: (90941/29799/48603) (0.537/0.176/0.287)
+2025-01-08 18:30:10 [GCN_GPU_NEIGHBOR.hpp:1423 :run] DEBUG - iterations 2147483647 config_run_time 300.000
+2025-01-08 18:30:10 [GCN_GPU_NEIGHBOR.hpp:1430 :run] DEBUG - start get_gpu_idle_mem_pipe()
+2025-01-08 18:30:13 [GCN_GPU_NEIGHBOR.hpp:1200 :get_gpu_idle_mem_pipe] DEBUG - get_gpu_idle_mem_pipe(): epoch 0 used 1381.000 max_used 1381.000 total 81050.625
+2025-01-08 18:30:13 [GCN_GPU_NEIGHBOR.hpp:1432 :run] DEBUG - release gpu memory
+2025-01-08 18:30:13 [GCN_GPU_NEIGHBOR.hpp:1435 :run] DEBUG - used 1339.000 total 81050.625 (after emptyCache)
+2025-01-08 18:30:13 [GCN_GPU_NEIGHBOR.hpp:1217 :determine_cache_node_idx] DEBUG - cache_node_num 169343 (1.000)
+2025-01-08 18:30:13 [GCN_GPU_NEIGHBOR.hpp:1236 :determine_cache_node_idx] DEBUG - cache_high_degree
+2025-01-08 18:30:13 [GCN_GPU_NEIGHBOR.hpp:945 :mark_cache_node] DEBUG - cache_node_num 169343 tmp_idx 169343
+2025-01-08 18:30:13 [GCN_GPU_NEIGHBOR.hpp:922 :gater_cpu_cache_feature_and_trans_to_gpu] DEBUG - start trans to gpu
+2025-01-08 18:30:13 [GCN_GPU_NEIGHBOR.hpp:1441 :run] DEBUG - used 1423.000 total 81050.625 (after cache feature)
+2025-01-08 18:30:13 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:30:15 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 000 train_loss 1.693 train_acc 0.549 val_loss 2.296 val_acc 0.648 test_acc 0.639 train_time 1.739(sample 0.780 trans 0.167 graph 0.150 nn 0.061) val_time 0.038, gcn_run_time 1.739) batch_size (128, 29799)
+2025-01-08 18:30:15 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:30:16 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 001 train_loss 1.296 train_acc 0.635 val_loss 2.164 val_acc 0.662 test_acc 0.640 train_time 1.386(sample 0.433 trans 0.162 graph 0.150 nn 0.061) val_time 0.036, gcn_run_time 3.125) batch_size (128, 29799)
+2025-01-08 18:30:16 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:30:18 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 002 train_loss 1.224 train_acc 0.652 val_loss 2.071 val_acc 0.678 test_acc 0.668 train_time 1.407(sample 0.446 trans 0.168 graph 0.150 nn 0.061) val_time 0.031, gcn_run_time 4.532) batch_size (128, 29799)
+2025-01-08 18:30:18 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:30:19 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 003 train_loss 1.187 train_acc 0.660 val_loss 2.073 val_acc 0.686 test_acc 0.677 train_time 1.379(sample 0.418 trans 0.168 graph 0.150 nn 0.062) val_time 0.029, gcn_run_time 5.911) batch_size (128, 29799)
+2025-01-08 18:30:19 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:30:21 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 004 train_loss 1.162 train_acc 0.666 val_loss 2.046 val_acc 0.684 test_acc 0.666 train_time 1.407(sample 0.444 trans 0.168 graph 0.150 nn 0.061) val_time 0.029, gcn_run_time 7.318) batch_size (128, 29799)
+2025-01-08 18:30:21 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:30:22 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 005 train_loss 1.144 train_acc 0.671 val_loss 2.034 val_acc 0.687 test_acc 0.675 train_time 1.328(sample 0.368 trans 0.168 graph 0.149 nn 0.061) val_time 0.041, gcn_run_time 8.646) batch_size (128, 29799)
+2025-01-08 18:30:22 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:30:23 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 006 train_loss 1.131 train_acc 0.672 val_loss 1.984 val_acc 0.689 test_acc 0.675 train_time 1.312(sample 0.362 trans 0.161 graph 0.149 nn 0.061) val_time 0.028, gcn_run_time 9.958) batch_size (128, 29799)
+2025-01-08 18:30:23 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:30:25 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 007 train_loss 1.120 train_acc 0.677 val_loss 2.045 val_acc 0.688 test_acc 0.678 train_time 1.334(sample 0.380 trans 0.166 graph 0.149 nn 0.061) val_time 0.029, gcn_run_time 11.292) batch_size (128, 29799)
+2025-01-08 18:30:25 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:30:26 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 008 train_loss 1.109 train_acc 0.680 val_loss 2.005 val_acc 0.691 test_acc 0.679 train_time 1.333(sample 0.378 trans 0.167 graph 0.149 nn 0.061) val_time 0.028, gcn_run_time 12.624) batch_size (128, 29799)
+2025-01-08 18:30:26 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:30:28 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 009 train_loss 1.100 train_acc 0.679 val_loss 2.042 val_acc 0.679 test_acc 0.658 train_time 1.311(sample 0.356 trans 0.166 graph 0.150 nn 0.061) val_time 0.029, gcn_run_time 13.935) batch_size (128, 29799)
+2025-01-08 18:30:28 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:30:29 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 010 train_loss 1.094 train_acc 0.682 val_loss 1.972 val_acc 0.690 test_acc 0.674 train_time 1.340(sample 0.383 trans 0.167 graph 0.150 nn 0.061) val_time 0.029, gcn_run_time 15.275) batch_size (128, 29799)
+2025-01-08 18:30:29 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:30:30 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 011 train_loss 1.088 train_acc 0.684 val_loss 1.959 val_acc 0.697 test_acc 0.687 train_time 1.316(sample 0.394 trans 0.154 graph 0.149 nn 0.059) val_time 0.028, gcn_run_time 16.591) batch_size (128, 29799)
+2025-01-08 18:30:30 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:30:32 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 012 train_loss 1.084 train_acc 0.685 val_loss 1.952 val_acc 0.686 test_acc 0.665 train_time 1.298(sample 0.365 trans 0.162 graph 0.149 nn 0.058) val_time 0.029, gcn_run_time 17.889) batch_size (128, 29799)
+2025-01-08 18:30:32 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:30:33 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 013 train_loss 1.080 train_acc 0.686 val_loss 1.940 val_acc 0.697 test_acc 0.688 train_time 1.306(sample 0.379 trans 0.161 graph 0.149 nn 0.059) val_time 0.028, gcn_run_time 19.195) batch_size (128, 29799)
+2025-01-08 18:30:33 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:30:35 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 014 train_loss 1.074 train_acc 0.688 val_loss 2.002 val_acc 0.688 test_acc 0.672 train_time 1.296(sample 0.365 trans 0.162 graph 0.149 nn 0.059) val_time 0.029, gcn_run_time 20.491) batch_size (128, 29799)
+2025-01-08 18:30:35 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:30:36 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 015 train_loss 1.070 train_acc 0.689 val_loss 1.963 val_acc 0.699 test_acc 0.691 train_time 1.306(sample 0.367 trans 0.164 graph 0.149 nn 0.059) val_time 0.028, gcn_run_time 21.797) batch_size (128, 29799)
+2025-01-08 18:30:36 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:30:37 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 016 train_loss 1.070 train_acc 0.688 val_loss 1.988 val_acc 0.690 test_acc 0.676 train_time 1.268(sample 0.361 trans 0.145 graph 0.149 nn 0.059) val_time 0.028, gcn_run_time 23.065) batch_size (128, 29799)
+2025-01-08 18:30:37 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:30:39 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 017 train_loss 1.063 train_acc 0.690 val_loss 1.960 val_acc 0.690 test_acc 0.677 train_time 1.265(sample 0.350 trans 0.147 graph 0.149 nn 0.059) val_time 0.028, gcn_run_time 24.330) batch_size (128, 29799)
+2025-01-08 18:30:39 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:30:40 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 018 train_loss 1.062 train_acc 0.692 val_loss 1.983 val_acc 0.691 test_acc 0.672 train_time 1.264(sample 0.366 trans 0.135 graph 0.149 nn 0.059) val_time 0.028, gcn_run_time 25.594) batch_size (128, 29799)
+2025-01-08 18:30:40 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:30:42 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 019 train_loss 1.058 train_acc 0.691 val_loss 1.973 val_acc 0.691 test_acc 0.679 train_time 1.300(sample 0.363 trans 0.160 graph 0.149 nn 0.059) val_time 0.028, gcn_run_time 26.894) batch_size (128, 29799)
+2025-01-08 18:30:42 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:30:43 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 020 train_loss 1.053 train_acc 0.693 val_loss 1.918 val_acc 0.697 test_acc 0.684 train_time 1.271(sample 0.345 trans 0.160 graph 0.149 nn 0.059) val_time 0.029, gcn_run_time 28.165) batch_size (128, 29799)
+2025-01-08 18:30:43 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:30:44 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 021 train_loss 1.051 train_acc 0.693 val_loss 1.959 val_acc 0.695 test_acc 0.693 train_time 1.295(sample 0.356 trans 0.162 graph 0.149 nn 0.059) val_time 0.028, gcn_run_time 29.460) batch_size (128, 29799)
+2025-01-08 18:30:44 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:30:46 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 022 train_loss 1.052 train_acc 0.694 val_loss 1.888 val_acc 0.698 test_acc 0.685 train_time 1.257(sample 0.339 trans 0.160 graph 0.149 nn 0.059) val_time 0.028, gcn_run_time 30.717) batch_size (128, 29799)
+2025-01-08 18:30:46 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:30:47 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 023 train_loss 1.049 train_acc 0.695 val_loss 1.903 val_acc 0.698 test_acc 0.684 train_time 1.254(sample 0.337 trans 0.160 graph 0.149 nn 0.059) val_time 0.028, gcn_run_time 31.971) batch_size (128, 29799)
+2025-01-08 18:30:47 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:30:48 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 024 train_loss 1.047 train_acc 0.693 val_loss 1.971 val_acc 0.697 test_acc 0.681 train_time 1.254(sample 0.337 trans 0.160 graph 0.149 nn 0.059) val_time 0.028, gcn_run_time 33.225) batch_size (128, 29799)
+2025-01-08 18:30:48 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:30:50 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 025 train_loss 1.043 train_acc 0.694 val_loss 1.964 val_acc 0.696 test_acc 0.684 train_time 1.284(sample 0.349 trans 0.163 graph 0.149 nn 0.059) val_time 0.028, gcn_run_time 34.509) batch_size (128, 29799)
+2025-01-08 18:30:50 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:30:51 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 026 train_loss 1.044 train_acc 0.693 val_loss 1.891 val_acc 0.693 test_acc 0.675 train_time 1.296(sample 0.360 trans 0.163 graph 0.149 nn 0.059) val_time 0.028, gcn_run_time 35.805) batch_size (128, 29799)
+2025-01-08 18:30:51 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:30:52 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 027 train_loss 1.042 train_acc 0.694 val_loss 1.942 val_acc 0.692 test_acc 0.673 train_time 1.291(sample 0.353 trans 0.163 graph 0.149 nn 0.059) val_time 0.028, gcn_run_time 37.096) batch_size (128, 29799)
+2025-01-08 18:30:52 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:30:54 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 028 train_loss 1.039 train_acc 0.694 val_loss 1.928 val_acc 0.699 test_acc 0.691 train_time 1.285(sample 0.348 trans 0.163 graph 0.149 nn 0.059) val_time 0.028, gcn_run_time 38.381) batch_size (128, 29799)
+2025-01-08 18:30:54 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:30:55 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 029 train_loss 1.037 train_acc 0.696 val_loss 1.940 val_acc 0.696 test_acc 0.682 train_time 1.281(sample 0.349 trans 0.162 graph 0.149 nn 0.059) val_time 0.028, gcn_run_time 39.662) batch_size (128, 29799)
+2025-01-08 18:30:55 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:30:57 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 030 train_loss 1.036 train_acc 0.696 val_loss 1.946 val_acc 0.696 test_acc 0.683 train_time 1.285(sample 0.349 trans 0.163 graph 0.149 nn 0.059) val_time 0.029, gcn_run_time 40.947) batch_size (128, 29799)
+2025-01-08 18:30:57 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:30:58 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 031 train_loss 1.035 train_acc 0.696 val_loss 1.907 val_acc 0.692 test_acc 0.679 train_time 1.256(sample 0.339 trans 0.160 graph 0.149 nn 0.059) val_time 0.028, gcn_run_time 42.203) batch_size (128, 29799)
+2025-01-08 18:30:58 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:30:59 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 032 train_loss 1.033 train_acc 0.696 val_loss 1.987 val_acc 0.689 test_acc 0.676 train_time 1.273(sample 0.344 trans 0.162 graph 0.149 nn 0.059) val_time 0.028, gcn_run_time 43.477) batch_size (128, 29799)
+2025-01-08 18:30:59 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:31:01 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 033 train_loss 1.033 train_acc 0.698 val_loss 1.930 val_acc 0.696 test_acc 0.688 train_time 1.271(sample 0.347 trans 0.162 graph 0.149 nn 0.059) val_time 0.029, gcn_run_time 44.747) batch_size (128, 29799)
+2025-01-08 18:31:01 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:31:02 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 034 train_loss 1.034 train_acc 0.697 val_loss 1.985 val_acc 0.698 test_acc 0.682 train_time 1.256(sample 0.337 trans 0.160 graph 0.149 nn 0.059) val_time 0.028, gcn_run_time 46.003) batch_size (128, 29799)
+2025-01-08 18:31:02 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:31:03 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 035 train_loss 1.028 train_acc 0.698 val_loss 1.939 val_acc 0.696 test_acc 0.678 train_time 1.259(sample 0.339 trans 0.161 graph 0.149 nn 0.059) val_time 0.028, gcn_run_time 47.262) batch_size (128, 29799)
+2025-01-08 18:31:03 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:31:05 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 036 train_loss 1.029 train_acc 0.697 val_loss 1.959 val_acc 0.696 test_acc 0.681 train_time 1.272(sample 0.346 trans 0.162 graph 0.149 nn 0.059) val_time 0.028, gcn_run_time 48.534) batch_size (128, 29799)
+2025-01-08 18:31:05 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:31:06 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 037 train_loss 1.028 train_acc 0.698 val_loss 1.914 val_acc 0.704 test_acc 0.694 train_time 1.285(sample 0.349 trans 0.163 graph 0.149 nn 0.059) val_time 0.028, gcn_run_time 49.820) batch_size (128, 29799)
+2025-01-08 18:31:06 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:31:07 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 038 train_loss 1.027 train_acc 0.697 val_loss 1.949 val_acc 0.696 test_acc 0.680 train_time 1.287(sample 0.350 trans 0.163 graph 0.149 nn 0.059) val_time 0.028, gcn_run_time 51.106) batch_size (128, 29799)
+2025-01-08 18:31:07 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:31:09 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 039 train_loss 1.026 train_acc 0.698 val_loss 1.865 val_acc 0.702 test_acc 0.689 train_time 1.289(sample 0.350 trans 0.163 graph 0.149 nn 0.059) val_time 0.028, gcn_run_time 52.395) batch_size (128, 29799)
+2025-01-08 18:31:09 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:31:10 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 040 train_loss 1.025 train_acc 0.700 val_loss 1.901 val_acc 0.695 test_acc 0.679 train_time 1.287(sample 0.350 trans 0.164 graph 0.149 nn 0.059) val_time 0.028, gcn_run_time 53.683) batch_size (128, 29799)
+2025-01-08 18:31:10 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:31:12 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 041 train_loss 1.024 train_acc 0.699 val_loss 1.920 val_acc 0.700 test_acc 0.685 train_time 1.287(sample 0.349 trans 0.164 graph 0.149 nn 0.059) val_time 0.028, gcn_run_time 54.970) batch_size (128, 29799)
+2025-01-08 18:31:12 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:31:13 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 042 train_loss 1.024 train_acc 0.700 val_loss 1.904 val_acc 0.697 test_acc 0.686 train_time 1.285(sample 0.349 trans 0.163 graph 0.149 nn 0.059) val_time 0.028, gcn_run_time 56.255) batch_size (128, 29799)
+2025-01-08 18:31:13 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:31:14 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 043 train_loss 1.024 train_acc 0.699 val_loss 1.923 val_acc 0.696 test_acc 0.686 train_time 1.281(sample 0.349 trans 0.163 graph 0.149 nn 0.059) val_time 0.028, gcn_run_time 57.536) batch_size (128, 29799)
+2025-01-08 18:31:14 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:31:16 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 044 train_loss 1.021 train_acc 0.699 val_loss 1.926 val_acc 0.696 test_acc 0.684 train_time 1.270(sample 0.356 trans 0.142 graph 0.149 nn 0.060) val_time 0.028, gcn_run_time 58.806) batch_size (128, 29799)
+2025-01-08 18:31:16 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:31:17 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 045 train_loss 1.020 train_acc 0.699 val_loss 1.961 val_acc 0.695 test_acc 0.681 train_time 1.213(sample 0.343 trans 0.141 graph 0.146 nn 0.055) val_time 0.028, gcn_run_time 60.020) batch_size (128, 29799)
+2025-01-08 18:31:17 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:31:18 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 046 train_loss 1.020 train_acc 0.700 val_loss 1.962 val_acc 0.698 test_acc 0.685 train_time 1.215(sample 0.343 trans 0.142 graph 0.146 nn 0.055) val_time 0.028, gcn_run_time 61.235) batch_size (128, 29799)
+2025-01-08 18:31:18 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:31:20 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 047 train_loss 1.019 train_acc 0.700 val_loss 1.925 val_acc 0.703 test_acc 0.693 train_time 1.238(sample 0.346 trans 0.145 graph 0.148 nn 0.056) val_time 0.028, gcn_run_time 62.473) batch_size (128, 29799)
+2025-01-08 18:31:20 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:31:21 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 048 train_loss 1.020 train_acc 0.700 val_loss 1.935 val_acc 0.693 test_acc 0.683 train_time 1.295(sample 0.353 trans 0.158 graph 0.150 nn 0.060) val_time 0.031, gcn_run_time 63.768) batch_size (128, 29799)
+2025-01-08 18:31:21 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:31:22 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 049 train_loss 1.018 train_acc 0.699 val_loss 1.882 val_acc 0.691 test_acc 0.682 train_time 1.298(sample 0.350 trans 0.164 graph 0.150 nn 0.061) val_time 0.029, gcn_run_time 65.066) batch_size (128, 29799)
+2025-01-08 18:31:22 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:31:24 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 050 train_loss 1.017 train_acc 0.701 val_loss 1.916 val_acc 0.700 test_acc 0.684 train_time 1.299(sample 0.350 trans 0.164 graph 0.149 nn 0.061) val_time 0.028, gcn_run_time 66.364) batch_size (128, 29799)
+2025-01-08 18:31:24 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:31:25 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 051 train_loss 1.016 train_acc 0.702 val_loss 1.940 val_acc 0.700 test_acc 0.688 train_time 1.304(sample 0.353 trans 0.165 graph 0.149 nn 0.061) val_time 0.028, gcn_run_time 67.668) batch_size (128, 29799)
+2025-01-08 18:31:25 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:31:27 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 052 train_loss 1.016 train_acc 0.700 val_loss 1.871 val_acc 0.698 test_acc 0.677 train_time 1.266(sample 0.339 trans 0.163 graph 0.149 nn 0.061) val_time 0.028, gcn_run_time 68.934) batch_size (128, 29799)
+2025-01-08 18:31:27 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:31:28 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 053 train_loss 1.015 train_acc 0.701 val_loss 1.937 val_acc 0.693 test_acc 0.677 train_time 1.267(sample 0.342 trans 0.163 graph 0.149 nn 0.061) val_time 0.028, gcn_run_time 70.201) batch_size (128, 29799)
+2025-01-08 18:31:28 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:31:29 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 054 train_loss 1.013 train_acc 0.701 val_loss 1.917 val_acc 0.698 test_acc 0.693 train_time 1.278(sample 0.345 trans 0.164 graph 0.149 nn 0.060) val_time 0.029, gcn_run_time 71.479) batch_size (128, 29799)
+2025-01-08 18:31:29 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:31:31 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 055 train_loss 1.014 train_acc 0.701 val_loss 1.913 val_acc 0.696 test_acc 0.677 train_time 1.275(sample 0.341 trans 0.164 graph 0.150 nn 0.061) val_time 0.028, gcn_run_time 72.754) batch_size (128, 29799)
+2025-01-08 18:31:31 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:31:32 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 056 train_loss 1.014 train_acc 0.701 val_loss 1.902 val_acc 0.696 test_acc 0.687 train_time 1.298(sample 0.351 trans 0.165 graph 0.150 nn 0.060) val_time 0.029, gcn_run_time 74.052) batch_size (128, 29799)
+2025-01-08 18:31:32 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:31:33 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 057 train_loss 1.012 train_acc 0.703 val_loss 1.905 val_acc 0.695 test_acc 0.672 train_time 1.303(sample 0.357 trans 0.165 graph 0.149 nn 0.060) val_time 0.028, gcn_run_time 75.355) batch_size (128, 29799)
+2025-01-08 18:31:33 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:31:35 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 058 train_loss 1.013 train_acc 0.702 val_loss 1.892 val_acc 0.701 test_acc 0.696 train_time 1.267(sample 0.339 trans 0.163 graph 0.149 nn 0.061) val_time 0.029, gcn_run_time 76.622) batch_size (128, 29799)
+2025-01-08 18:31:35 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:31:36 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 059 train_loss 1.010 train_acc 0.702 val_loss 1.935 val_acc 0.704 test_acc 0.696 train_time 1.269(sample 0.342 trans 0.164 graph 0.149 nn 0.061) val_time 0.028, gcn_run_time 77.890) batch_size (128, 29799)
+2025-01-08 18:31:36 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:31:38 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 060 train_loss 1.013 train_acc 0.703 val_loss 1.946 val_acc 0.699 test_acc 0.686 train_time 1.267(sample 0.341 trans 0.164 graph 0.149 nn 0.061) val_time 0.029, gcn_run_time 79.158) batch_size (128, 29799)
+2025-01-08 18:31:38 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:31:39 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 061 train_loss 1.012 train_acc 0.701 val_loss 1.919 val_acc 0.697 test_acc 0.686 train_time 1.267(sample 0.340 trans 0.164 graph 0.149 nn 0.061) val_time 0.028, gcn_run_time 80.424) batch_size (128, 29799)
+2025-01-08 18:31:39 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:31:40 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 062 train_loss 1.010 train_acc 0.703 val_loss 1.920 val_acc 0.697 test_acc 0.680 train_time 1.290(sample 0.348 trans 0.165 graph 0.150 nn 0.060) val_time 0.028, gcn_run_time 81.715) batch_size (128, 29799)
+2025-01-08 18:31:40 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:31:42 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 063 train_loss 1.009 train_acc 0.702 val_loss 1.914 val_acc 0.698 test_acc 0.682 train_time 1.308(sample 0.356 trans 0.166 graph 0.149 nn 0.060) val_time 0.029, gcn_run_time 83.022) batch_size (128, 29799)
+2025-01-08 18:31:42 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:31:43 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 064 train_loss 1.011 train_acc 0.702 val_loss 1.898 val_acc 0.691 test_acc 0.675 train_time 1.265(sample 0.339 trans 0.164 graph 0.149 nn 0.061) val_time 0.028, gcn_run_time 84.287) batch_size (128, 29799)
+2025-01-08 18:31:43 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:31:44 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 065 train_loss 1.007 train_acc 0.704 val_loss 1.954 val_acc 0.695 test_acc 0.681 train_time 1.269(sample 0.341 trans 0.164 graph 0.149 nn 0.061) val_time 0.029, gcn_run_time 85.557) batch_size (128, 29799)
+2025-01-08 18:31:44 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:31:46 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 066 train_loss 1.010 train_acc 0.703 val_loss 1.969 val_acc 0.698 test_acc 0.685 train_time 1.298(sample 0.351 trans 0.166 graph 0.149 nn 0.060) val_time 0.028, gcn_run_time 86.855) batch_size (128, 29799)
+2025-01-08 18:31:46 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:31:47 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 067 train_loss 1.007 train_acc 0.703 val_loss 1.938 val_acc 0.696 test_acc 0.683 train_time 1.266(sample 0.340 trans 0.164 graph 0.149 nn 0.061) val_time 0.028, gcn_run_time 88.121) batch_size (128, 29799)
+2025-01-08 18:31:47 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:31:48 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 068 train_loss 1.007 train_acc 0.702 val_loss 1.937 val_acc 0.704 test_acc 0.697 train_time 1.274(sample 0.343 trans 0.165 graph 0.150 nn 0.060) val_time 0.028, gcn_run_time 89.395) batch_size (128, 29799)
+2025-01-08 18:31:48 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:31:50 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 069 train_loss 1.008 train_acc 0.704 val_loss 1.877 val_acc 0.699 test_acc 0.683 train_time 1.300(sample 0.351 trans 0.166 graph 0.150 nn 0.060) val_time 0.028, gcn_run_time 90.696) batch_size (128, 29799)
+2025-01-08 18:31:50 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:31:51 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 070 train_loss 1.010 train_acc 0.703 val_loss 1.960 val_acc 0.696 test_acc 0.678 train_time 1.298(sample 0.350 trans 0.166 graph 0.149 nn 0.060) val_time 0.028, gcn_run_time 91.994) batch_size (128, 29799)
+2025-01-08 18:31:51 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:31:53 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 071 train_loss 1.004 train_acc 0.704 val_loss 1.914 val_acc 0.696 test_acc 0.678 train_time 1.264(sample 0.338 trans 0.163 graph 0.149 nn 0.061) val_time 0.028, gcn_run_time 93.258) batch_size (128, 29799)
+2025-01-08 18:31:53 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:31:54 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 072 train_loss 1.004 train_acc 0.703 val_loss 1.947 val_acc 0.700 test_acc 0.693 train_time 1.267(sample 0.339 trans 0.163 graph 0.149 nn 0.061) val_time 0.028, gcn_run_time 94.525) batch_size (128, 29799)
+2025-01-08 18:31:54 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:31:55 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 073 train_loss 1.006 train_acc 0.703 val_loss 1.893 val_acc 0.702 test_acc 0.687 train_time 1.266(sample 0.340 trans 0.164 graph 0.149 nn 0.061) val_time 0.028, gcn_run_time 95.790) batch_size (128, 29799)
+2025-01-08 18:31:55 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:31:57 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 074 train_loss 1.004 train_acc 0.704 val_loss 1.872 val_acc 0.696 test_acc 0.683 train_time 1.301(sample 0.354 trans 0.166 graph 0.149 nn 0.060) val_time 0.029, gcn_run_time 97.091) batch_size (128, 29799)
+2025-01-08 18:31:57 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:31:58 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 075 train_loss 1.005 train_acc 0.704 val_loss 1.939 val_acc 0.692 test_acc 0.680 train_time 1.280(sample 0.345 trans 0.165 graph 0.149 nn 0.061) val_time 0.029, gcn_run_time 98.372) batch_size (128, 29799)
+2025-01-08 18:31:58 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:31:59 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 076 train_loss 1.006 train_acc 0.704 val_loss 1.900 val_acc 0.702 test_acc 0.686 train_time 1.266(sample 0.339 trans 0.164 graph 0.149 nn 0.061) val_time 0.029, gcn_run_time 99.638) batch_size (128, 29799)
+2025-01-08 18:31:59 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:32:01 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 077 train_loss 1.003 train_acc 0.705 val_loss 1.894 val_acc 0.700 test_acc 0.685 train_time 1.295(sample 0.350 trans 0.166 graph 0.149 nn 0.060) val_time 0.029, gcn_run_time 100.933) batch_size (128, 29799)
+2025-01-08 18:32:01 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:32:02 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 078 train_loss 1.003 train_acc 0.705 val_loss 1.900 val_acc 0.702 test_acc 0.693 train_time 1.299(sample 0.350 trans 0.166 graph 0.150 nn 0.060) val_time 0.028, gcn_run_time 102.232) batch_size (128, 29799)
+2025-01-08 18:32:02 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:32:04 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 079 train_loss 1.002 train_acc 0.705 val_loss 1.923 val_acc 0.701 test_acc 0.686 train_time 1.300(sample 0.350 trans 0.166 graph 0.150 nn 0.060) val_time 0.029, gcn_run_time 103.532) batch_size (128, 29799)
+2025-01-08 18:32:04 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:32:05 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 080 train_loss 1.002 train_acc 0.706 val_loss 1.891 val_acc 0.703 test_acc 0.693 train_time 1.301(sample 0.350 trans 0.166 graph 0.149 nn 0.061) val_time 0.028, gcn_run_time 104.833) batch_size (128, 29799)
+2025-01-08 18:32:05 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:32:06 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 081 train_loss 1.003 train_acc 0.704 val_loss 1.883 val_acc 0.696 test_acc 0.690 train_time 1.286(sample 0.346 trans 0.165 graph 0.149 nn 0.061) val_time 0.028, gcn_run_time 106.119) batch_size (128, 29799)
+2025-01-08 18:32:06 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:32:08 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 082 train_loss 1.006 train_acc 0.703 val_loss 1.892 val_acc 0.702 test_acc 0.692 train_time 1.266(sample 0.339 trans 0.164 graph 0.150 nn 0.061) val_time 0.028, gcn_run_time 107.386) batch_size (128, 29799)
+2025-01-08 18:32:08 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:32:09 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 083 train_loss 1.004 train_acc 0.703 val_loss 1.874 val_acc 0.696 test_acc 0.677 train_time 1.267(sample 0.339 trans 0.164 graph 0.149 nn 0.061) val_time 0.028, gcn_run_time 108.652) batch_size (128, 29799)
+2025-01-08 18:32:09 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:32:10 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 084 train_loss 1.001 train_acc 0.704 val_loss 1.940 val_acc 0.690 test_acc 0.675 train_time 1.281(sample 0.344 trans 0.165 graph 0.150 nn 0.061) val_time 0.029, gcn_run_time 109.933) batch_size (128, 29799)
+2025-01-08 18:32:10 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:32:12 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 085 train_loss 1.001 train_acc 0.705 val_loss 1.935 val_acc 0.695 test_acc 0.679 train_time 1.308(sample 0.355 trans 0.166 graph 0.150 nn 0.060) val_time 0.028, gcn_run_time 111.241) batch_size (128, 29799)
+2025-01-08 18:32:12 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:32:13 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 086 train_loss 1.002 train_acc 0.704 val_loss 1.880 val_acc 0.705 test_acc 0.692 train_time 1.269(sample 0.342 trans 0.164 graph 0.149 nn 0.061) val_time 0.028, gcn_run_time 112.510) batch_size (128, 29799)
+2025-01-08 18:32:13 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:32:15 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 087 train_loss 1.001 train_acc 0.705 val_loss 1.910 val_acc 0.699 test_acc 0.684 train_time 1.267(sample 0.340 trans 0.164 graph 0.149 nn 0.061) val_time 0.028, gcn_run_time 113.777) batch_size (128, 29799)
+2025-01-08 18:32:15 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:32:16 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 088 train_loss 1.001 train_acc 0.705 val_loss 1.927 val_acc 0.702 test_acc 0.691 train_time 1.275(sample 0.343 trans 0.164 graph 0.150 nn 0.061) val_time 0.028, gcn_run_time 115.052) batch_size (128, 29799)
+2025-01-08 18:32:16 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:32:17 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 089 train_loss 1.000 train_acc 0.706 val_loss 1.937 val_acc 0.694 test_acc 0.678 train_time 1.266(sample 0.340 trans 0.164 graph 0.149 nn 0.061) val_time 0.028, gcn_run_time 116.318) batch_size (128, 29799)
+2025-01-08 18:32:17 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:32:19 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 090 train_loss 1.001 train_acc 0.705 val_loss 1.954 val_acc 0.689 test_acc 0.673 train_time 1.267(sample 0.340 trans 0.164 graph 0.149 nn 0.061) val_time 0.028, gcn_run_time 117.585) batch_size (128, 29799)
+2025-01-08 18:32:19 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:32:20 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 091 train_loss 0.999 train_acc 0.704 val_loss 1.880 val_acc 0.702 test_acc 0.692 train_time 1.266(sample 0.339 trans 0.164 graph 0.149 nn 0.061) val_time 0.028, gcn_run_time 118.851) batch_size (128, 29799)
+2025-01-08 18:32:20 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:32:21 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 092 train_loss 0.998 train_acc 0.707 val_loss 1.895 val_acc 0.700 test_acc 0.689 train_time 1.297(sample 0.350 trans 0.166 graph 0.149 nn 0.060) val_time 0.029, gcn_run_time 120.148) batch_size (128, 29799)
+2025-01-08 18:32:21 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:32:23 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 093 train_loss 1.002 train_acc 0.704 val_loss 1.923 val_acc 0.700 test_acc 0.687 train_time 1.301(sample 0.351 trans 0.166 graph 0.150 nn 0.060) val_time 0.028, gcn_run_time 121.448) batch_size (128, 29799)
+2025-01-08 18:32:23 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:32:24 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 094 train_loss 0.997 train_acc 0.704 val_loss 1.892 val_acc 0.700 test_acc 0.682 train_time 1.302(sample 0.350 trans 0.166 graph 0.149 nn 0.061) val_time 0.029, gcn_run_time 122.750) batch_size (128, 29799)
+2025-01-08 18:32:24 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:32:26 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 095 train_loss 1.000 train_acc 0.705 val_loss 1.921 val_acc 0.699 test_acc 0.687 train_time 1.301(sample 0.350 trans 0.166 graph 0.149 nn 0.061) val_time 0.028, gcn_run_time 124.051) batch_size (128, 29799)
+2025-01-08 18:32:26 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:32:27 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 096 train_loss 0.996 train_acc 0.706 val_loss 1.875 val_acc 0.702 test_acc 0.686 train_time 1.267(sample 0.340 trans 0.164 graph 0.149 nn 0.061) val_time 0.028, gcn_run_time 125.318) batch_size (128, 29799)
+2025-01-08 18:32:27 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:32:28 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 097 train_loss 0.998 train_acc 0.706 val_loss 1.911 val_acc 0.703 test_acc 0.691 train_time 1.267(sample 0.339 trans 0.164 graph 0.149 nn 0.061) val_time 0.028, gcn_run_time 126.585) batch_size (128, 29799)
+2025-01-08 18:32:28 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:32:30 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 098 train_loss 0.998 train_acc 0.706 val_loss 1.919 val_acc 0.697 test_acc 0.681 train_time 1.266(sample 0.339 trans 0.163 graph 0.149 nn 0.061) val_time 0.028, gcn_run_time 127.851) batch_size (128, 29799)
+2025-01-08 18:32:30 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:32:31 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 099 train_loss 1.001 train_acc 0.702 val_loss 1.898 val_acc 0.703 test_acc 0.689 train_time 1.282(sample 0.346 trans 0.165 graph 0.149 nn 0.060) val_time 0.029, gcn_run_time 129.133) batch_size (128, 29799)
+2025-01-08 18:32:31 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:32:32 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 100 train_loss 0.998 train_acc 0.705 val_loss 1.916 val_acc 0.702 test_acc 0.693 train_time 1.268(sample 0.340 trans 0.164 graph 0.149 nn 0.061) val_time 0.028, gcn_run_time 130.400) batch_size (128, 29799)
+2025-01-08 18:32:32 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:32:34 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 101 train_loss 0.997 train_acc 0.705 val_loss 1.941 val_acc 0.698 test_acc 0.686 train_time 1.264(sample 0.339 trans 0.164 graph 0.149 nn 0.061) val_time 0.029, gcn_run_time 131.665) batch_size (128, 29799)
+2025-01-08 18:32:34 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:32:35 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 102 train_loss 0.997 train_acc 0.706 val_loss 1.892 val_acc 0.703 test_acc 0.690 train_time 1.265(sample 0.338 trans 0.164 graph 0.149 nn 0.061) val_time 0.028, gcn_run_time 132.930) batch_size (128, 29799)
+2025-01-08 18:32:35 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:32:36 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 103 train_loss 1.000 train_acc 0.704 val_loss 1.902 val_acc 0.701 test_acc 0.689 train_time 1.267(sample 0.347 trans 0.144 graph 0.150 nn 0.060) val_time 0.028, gcn_run_time 134.197) batch_size (128, 29799)
+2025-01-08 18:32:36 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:32:38 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 104 train_loss 0.998 train_acc 0.705 val_loss 1.898 val_acc 0.698 test_acc 0.684 train_time 1.246(sample 0.339 trans 0.146 graph 0.149 nn 0.060) val_time 0.028, gcn_run_time 135.443) batch_size (128, 29799)
+2025-01-08 18:32:38 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:32:39 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 105 train_loss 0.996 train_acc 0.706 val_loss 1.889 val_acc 0.701 test_acc 0.692 train_time 1.259(sample 0.339 trans 0.156 graph 0.149 nn 0.061) val_time 0.028, gcn_run_time 136.703) batch_size (128, 29799)
+2025-01-08 18:32:39 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:32:41 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 106 train_loss 0.999 train_acc 0.705 val_loss 1.927 val_acc 0.701 test_acc 0.691 train_time 1.264(sample 0.340 trans 0.156 graph 0.149 nn 0.061) val_time 0.029, gcn_run_time 137.967) batch_size (128, 29799)
+2025-01-08 18:32:41 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:32:42 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 107 train_loss 0.995 train_acc 0.706 val_loss 1.916 val_acc 0.700 test_acc 0.691 train_time 1.291(sample 0.350 trans 0.163 graph 0.149 nn 0.059) val_time 0.029, gcn_run_time 139.258) batch_size (128, 29799)
+2025-01-08 18:32:42 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:32:43 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 108 train_loss 0.995 train_acc 0.706 val_loss 1.913 val_acc 0.695 test_acc 0.677 train_time 1.274(sample 0.343 trans 0.163 graph 0.149 nn 0.059) val_time 0.028, gcn_run_time 140.532) batch_size (128, 29799)
+2025-01-08 18:32:43 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:32:45 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 109 train_loss 0.996 train_acc 0.706 val_loss 1.898 val_acc 0.704 test_acc 0.693 train_time 1.292(sample 0.350 trans 0.164 graph 0.150 nn 0.059) val_time 0.028, gcn_run_time 141.825) batch_size (128, 29799)
+2025-01-08 18:32:45 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:32:46 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 110 train_loss 0.997 train_acc 0.706 val_loss 1.916 val_acc 0.697 test_acc 0.677 train_time 1.292(sample 0.350 trans 0.164 graph 0.149 nn 0.059) val_time 0.028, gcn_run_time 143.116) batch_size (128, 29799)
+2025-01-08 18:32:46 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:32:47 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 111 train_loss 0.998 train_acc 0.706 val_loss 1.891 val_acc 0.698 test_acc 0.686 train_time 1.257(sample 0.338 trans 0.162 graph 0.148 nn 0.060) val_time 0.028, gcn_run_time 144.373) batch_size (128, 29799)
+2025-01-08 18:32:47 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:32:49 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 112 train_loss 0.997 train_acc 0.706 val_loss 1.907 val_acc 0.698 test_acc 0.682 train_time 1.257(sample 0.338 trans 0.162 graph 0.149 nn 0.060) val_time 0.028, gcn_run_time 145.630) batch_size (128, 29799)
+2025-01-08 18:32:49 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:32:50 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 113 train_loss 0.994 train_acc 0.707 val_loss 1.897 val_acc 0.700 test_acc 0.691 train_time 1.261(sample 0.341 trans 0.162 graph 0.149 nn 0.059) val_time 0.028, gcn_run_time 146.891) batch_size (128, 29799)
+2025-01-08 18:32:50 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:32:51 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 114 train_loss 0.995 train_acc 0.706 val_loss 1.898 val_acc 0.700 test_acc 0.692 train_time 1.285(sample 0.348 trans 0.164 graph 0.149 nn 0.059) val_time 0.028, gcn_run_time 148.175) batch_size (128, 29799)
+2025-01-08 18:32:51 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:32:53 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 115 train_loss 0.998 train_acc 0.706 val_loss 1.893 val_acc 0.700 test_acc 0.687 train_time 1.291(sample 0.350 trans 0.164 graph 0.149 nn 0.059) val_time 0.028, gcn_run_time 149.466) batch_size (128, 29799)
+2025-01-08 18:32:53 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:32:54 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 116 train_loss 0.993 train_acc 0.706 val_loss 1.902 val_acc 0.705 test_acc 0.690 train_time 1.258(sample 0.337 trans 0.162 graph 0.149 nn 0.060) val_time 0.028, gcn_run_time 150.724) batch_size (128, 29799)
+2025-01-08 18:32:54 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:32:56 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 117 train_loss 0.995 train_acc 0.706 val_loss 1.875 val_acc 0.698 test_acc 0.683 train_time 1.257(sample 0.338 trans 0.161 graph 0.149 nn 0.059) val_time 0.028, gcn_run_time 151.981) batch_size (128, 29799)
+2025-01-08 18:32:56 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:32:57 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 118 train_loss 0.995 train_acc 0.706 val_loss 1.889 val_acc 0.698 test_acc 0.685 train_time 1.285(sample 0.353 trans 0.158 graph 0.149 nn 0.058) val_time 0.028, gcn_run_time 153.266) batch_size (128, 29799)
+2025-01-08 18:32:57 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:32:58 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 119 train_loss 0.993 train_acc 0.706 val_loss 1.876 val_acc 0.702 test_acc 0.693 train_time 1.263(sample 0.343 trans 0.158 graph 0.149 nn 0.059) val_time 0.028, gcn_run_time 154.529) batch_size (128, 29799)
+2025-01-08 18:32:58 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:33:00 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 120 train_loss 0.995 train_acc 0.705 val_loss 1.912 val_acc 0.699 test_acc 0.686 train_time 1.261(sample 0.345 trans 0.159 graph 0.149 nn 0.059) val_time 0.028, gcn_run_time 155.790) batch_size (128, 29799)
+2025-01-08 18:33:00 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:33:01 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 121 train_loss 0.994 train_acc 0.705 val_loss 1.888 val_acc 0.703 test_acc 0.687 train_time 1.292(sample 0.357 trans 0.162 graph 0.149 nn 0.059) val_time 0.029, gcn_run_time 157.082) batch_size (128, 29799)
+2025-01-08 18:33:01 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:33:02 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 122 train_loss 0.993 train_acc 0.706 val_loss 1.887 val_acc 0.700 test_acc 0.691 train_time 1.269(sample 0.355 trans 0.142 graph 0.149 nn 0.059) val_time 0.028, gcn_run_time 158.351) batch_size (128, 29799)
+2025-01-08 18:33:02 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:33:04 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 123 train_loss 0.993 train_acc 0.706 val_loss 1.861 val_acc 0.706 test_acc 0.693 train_time 1.282(sample 0.351 trans 0.158 graph 0.149 nn 0.058) val_time 0.028, gcn_run_time 159.634) batch_size (128, 29799)
+2025-01-08 18:33:04 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:33:05 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 124 train_loss 0.995 train_acc 0.706 val_loss 1.933 val_acc 0.699 test_acc 0.687 train_time 1.287(sample 0.351 trans 0.161 graph 0.149 nn 0.059) val_time 0.028, gcn_run_time 160.920) batch_size (128, 29799)
+2025-01-08 18:33:05 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:33:06 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 125 train_loss 0.993 train_acc 0.708 val_loss 1.863 val_acc 0.706 test_acc 0.697 train_time 1.291(sample 0.352 trans 0.162 graph 0.149 nn 0.059) val_time 0.028, gcn_run_time 162.211) batch_size (128, 29799)
+2025-01-08 18:33:06 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:33:08 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 126 train_loss 0.990 train_acc 0.707 val_loss 1.938 val_acc 0.686 test_acc 0.673 train_time 1.290(sample 0.351 trans 0.162 graph 0.149 nn 0.059) val_time 0.028, gcn_run_time 163.501) batch_size (128, 29799)
+2025-01-08 18:33:08 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:33:09 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 127 train_loss 0.991 train_acc 0.708 val_loss 1.896 val_acc 0.706 test_acc 0.695 train_time 1.256(sample 0.339 trans 0.160 graph 0.149 nn 0.059) val_time 0.028, gcn_run_time 164.757) batch_size (128, 29799)
+2025-01-08 18:33:09 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:33:11 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 128 train_loss 0.995 train_acc 0.707 val_loss 1.939 val_acc 0.698 test_acc 0.683 train_time 1.266(sample 0.343 trans 0.154 graph 0.149 nn 0.060) val_time 0.029, gcn_run_time 166.024) batch_size (128, 29799)
+2025-01-08 18:33:11 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:33:12 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 129 train_loss 0.991 train_acc 0.707 val_loss 1.904 val_acc 0.699 test_acc 0.685 train_time 1.296(sample 0.351 trans 0.160 graph 0.150 nn 0.062) val_time 0.029, gcn_run_time 167.319) batch_size (128, 29799)
+2025-01-08 18:33:12 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:33:13 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 130 train_loss 0.991 train_acc 0.706 val_loss 1.929 val_acc 0.689 test_acc 0.661 train_time 1.313(sample 0.355 trans 0.165 graph 0.150 nn 0.062) val_time 0.029, gcn_run_time 168.632) batch_size (128, 29799)
+2025-01-08 18:33:13 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:33:15 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 131 train_loss 0.993 train_acc 0.706 val_loss 1.883 val_acc 0.702 test_acc 0.695 train_time 1.282(sample 0.347 trans 0.154 graph 0.149 nn 0.061) val_time 0.028, gcn_run_time 169.914) batch_size (128, 29799)
+2025-01-08 18:33:15 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:33:16 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 132 train_loss 0.995 train_acc 0.704 val_loss 1.888 val_acc 0.705 test_acc 0.696 train_time 1.248(sample 0.334 trans 0.155 graph 0.149 nn 0.059) val_time 0.028, gcn_run_time 171.162) batch_size (128, 29799)
+2025-01-08 18:33:16 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:33:17 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 133 train_loss 0.994 train_acc 0.706 val_loss 1.929 val_acc 0.700 test_acc 0.689 train_time 1.261(sample 0.340 trans 0.158 graph 0.148 nn 0.059) val_time 0.028, gcn_run_time 172.422) batch_size (128, 29799)
+2025-01-08 18:33:17 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:33:19 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 134 train_loss 0.992 train_acc 0.706 val_loss 1.969 val_acc 0.693 test_acc 0.679 train_time 1.281(sample 0.348 trans 0.161 graph 0.149 nn 0.058) val_time 0.028, gcn_run_time 173.703) batch_size (128, 29799)
+2025-01-08 18:33:19 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:33:20 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 135 train_loss 0.991 train_acc 0.706 val_loss 1.844 val_acc 0.703 test_acc 0.693 train_time 1.281(sample 0.350 trans 0.162 graph 0.149 nn 0.058) val_time 0.028, gcn_run_time 174.984) batch_size (128, 29799)
+2025-01-08 18:33:20 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:33:22 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 136 train_loss 0.993 train_acc 0.707 val_loss 1.956 val_acc 0.693 test_acc 0.672 train_time 1.281(sample 0.349 trans 0.162 graph 0.149 nn 0.059) val_time 0.028, gcn_run_time 176.266) batch_size (128, 29799)
+2025-01-08 18:33:22 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:33:23 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 137 train_loss 0.991 train_acc 0.706 val_loss 1.879 val_acc 0.698 test_acc 0.685 train_time 1.253(sample 0.335 trans 0.160 graph 0.149 nn 0.059) val_time 0.028, gcn_run_time 177.518) batch_size (128, 29799)
+2025-01-08 18:33:23 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:33:24 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 138 train_loss 0.993 train_acc 0.706 val_loss 1.911 val_acc 0.701 test_acc 0.685 train_time 1.250(sample 0.335 trans 0.160 graph 0.149 nn 0.059) val_time 0.028, gcn_run_time 178.768) batch_size (128, 29799)
+2025-01-08 18:33:24 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:33:26 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 139 train_loss 0.991 train_acc 0.707 val_loss 1.922 val_acc 0.696 test_acc 0.684 train_time 1.251(sample 0.335 trans 0.160 graph 0.149 nn 0.059) val_time 0.028, gcn_run_time 180.019) batch_size (128, 29799)
+2025-01-08 18:33:26 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:33:27 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 140 train_loss 0.989 train_acc 0.707 val_loss 1.877 val_acc 0.700 test_acc 0.689 train_time 1.251(sample 0.336 trans 0.160 graph 0.149 nn 0.059) val_time 0.028, gcn_run_time 181.270) batch_size (128, 29799)
+2025-01-08 18:33:27 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:33:28 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 141 train_loss 0.993 train_acc 0.706 val_loss 1.899 val_acc 0.701 test_acc 0.688 train_time 1.252(sample 0.337 trans 0.160 graph 0.149 nn 0.059) val_time 0.028, gcn_run_time 182.522) batch_size (128, 29799)
+2025-01-08 18:33:28 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:33:30 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 142 train_loss 0.990 train_acc 0.706 val_loss 1.900 val_acc 0.702 test_acc 0.690 train_time 1.252(sample 0.335 trans 0.160 graph 0.149 nn 0.059) val_time 0.028, gcn_run_time 183.774) batch_size (128, 29799)
+2025-01-08 18:33:30 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:33:31 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 143 train_loss 0.990 train_acc 0.707 val_loss 1.891 val_acc 0.702 test_acc 0.691 train_time 1.254(sample 0.337 trans 0.158 graph 0.149 nn 0.059) val_time 0.029, gcn_run_time 185.028) batch_size (128, 29799)
+2025-01-08 18:33:31 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:33:32 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 144 train_loss 0.991 train_acc 0.706 val_loss 1.861 val_acc 0.701 test_acc 0.684 train_time 1.300(sample 0.354 trans 0.161 graph 0.149 nn 0.061) val_time 0.029, gcn_run_time 186.328) batch_size (128, 29799)
+2025-01-08 18:33:32 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:33:34 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 145 train_loss 0.989 train_acc 0.707 val_loss 1.985 val_acc 0.693 test_acc 0.684 train_time 1.281(sample 0.346 trans 0.162 graph 0.149 nn 0.061) val_time 0.028, gcn_run_time 187.609) batch_size (128, 29799)
+2025-01-08 18:33:34 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:33:35 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 146 train_loss 0.993 train_acc 0.706 val_loss 1.936 val_acc 0.699 test_acc 0.686 train_time 1.299(sample 0.352 trans 0.163 graph 0.149 nn 0.061) val_time 0.029, gcn_run_time 188.908) batch_size (128, 29799)
+2025-01-08 18:33:35 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:33:36 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 147 train_loss 0.993 train_acc 0.708 val_loss 1.910 val_acc 0.700 test_acc 0.685 train_time 1.265(sample 0.339 trans 0.162 graph 0.149 nn 0.061) val_time 0.028, gcn_run_time 190.173) batch_size (128, 29799)
+2025-01-08 18:33:36 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:33:38 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 148 train_loss 0.991 train_acc 0.707 val_loss 1.930 val_acc 0.702 test_acc 0.692 train_time 1.265(sample 0.339 trans 0.162 graph 0.149 nn 0.061) val_time 0.028, gcn_run_time 191.438) batch_size (128, 29799)
+2025-01-08 18:33:38 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:33:39 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 149 train_loss 0.989 train_acc 0.707 val_loss 1.921 val_acc 0.699 test_acc 0.687 train_time 1.268(sample 0.341 trans 0.162 graph 0.149 nn 0.061) val_time 0.028, gcn_run_time 192.706) batch_size (128, 29799)
+2025-01-08 18:33:39 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:33:41 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 150 train_loss 0.991 train_acc 0.707 val_loss 1.913 val_acc 0.704 test_acc 0.691 train_time 1.272(sample 0.342 trans 0.162 graph 0.149 nn 0.061) val_time 0.029, gcn_run_time 193.979) batch_size (128, 29799)
+2025-01-08 18:33:41 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:33:42 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 151 train_loss 0.989 train_acc 0.707 val_loss 1.867 val_acc 0.698 test_acc 0.680 train_time 1.303(sample 0.353 trans 0.165 graph 0.149 nn 0.061) val_time 0.029, gcn_run_time 195.282) batch_size (128, 29799)
+2025-01-08 18:33:42 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:33:43 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 152 train_loss 0.989 train_acc 0.707 val_loss 1.903 val_acc 0.700 test_acc 0.684 train_time 1.267(sample 0.339 trans 0.162 graph 0.149 nn 0.061) val_time 0.028, gcn_run_time 196.548) batch_size (128, 29799)
+2025-01-08 18:33:43 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:33:45 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 153 train_loss 0.991 train_acc 0.706 val_loss 1.911 val_acc 0.704 test_acc 0.690 train_time 1.283(sample 0.346 trans 0.161 graph 0.149 nn 0.061) val_time 0.028, gcn_run_time 197.831) batch_size (128, 29799)
+2025-01-08 18:33:45 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:33:46 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 154 train_loss 0.991 train_acc 0.707 val_loss 1.879 val_acc 0.701 test_acc 0.686 train_time 1.273(sample 0.347 trans 0.149 graph 0.149 nn 0.062) val_time 0.028, gcn_run_time 199.104) batch_size (128, 29799)
+2025-01-08 18:33:46 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:33:47 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 155 train_loss 0.991 train_acc 0.706 val_loss 1.954 val_acc 0.698 test_acc 0.686 train_time 1.261(sample 0.338 trans 0.157 graph 0.149 nn 0.061) val_time 0.028, gcn_run_time 200.365) batch_size (128, 29799)
+2025-01-08 18:33:47 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:33:49 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 156 train_loss 0.989 train_acc 0.708 val_loss 1.870 val_acc 0.705 test_acc 0.694 train_time 1.267(sample 0.341 trans 0.160 graph 0.149 nn 0.061) val_time 0.028, gcn_run_time 201.632) batch_size (128, 29799)
+2025-01-08 18:33:49 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:33:50 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 157 train_loss 0.990 train_acc 0.705 val_loss 1.890 val_acc 0.704 test_acc 0.691 train_time 1.268(sample 0.341 trans 0.161 graph 0.149 nn 0.061) val_time 0.028, gcn_run_time 202.900) batch_size (128, 29799)
+2025-01-08 18:33:50 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:33:51 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 158 train_loss 0.989 train_acc 0.708 val_loss 1.943 val_acc 0.698 test_acc 0.683 train_time 1.294(sample 0.350 trans 0.163 graph 0.149 nn 0.061) val_time 0.029, gcn_run_time 204.194) batch_size (128, 29799)
+2025-01-08 18:33:51 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:33:53 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 159 train_loss 0.989 train_acc 0.708 val_loss 1.878 val_acc 0.700 test_acc 0.690 train_time 1.292(sample 0.349 trans 0.163 graph 0.149 nn 0.061) val_time 0.029, gcn_run_time 205.486) batch_size (128, 29799)
+2025-01-08 18:33:53 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:33:54 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 160 train_loss 0.990 train_acc 0.707 val_loss 1.918 val_acc 0.700 test_acc 0.685 train_time 1.276(sample 0.347 trans 0.152 graph 0.149 nn 0.062) val_time 0.029, gcn_run_time 206.763) batch_size (128, 29799)
+2025-01-08 18:33:54 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:33:56 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 161 train_loss 0.987 train_acc 0.708 val_loss 1.926 val_acc 0.701 test_acc 0.686 train_time 1.256(sample 0.340 trans 0.146 graph 0.150 nn 0.063) val_time 0.028, gcn_run_time 208.019) batch_size (128, 29799)
+2025-01-08 18:33:56 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:33:57 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 162 train_loss 0.990 train_acc 0.708 val_loss 1.924 val_acc 0.696 test_acc 0.680 train_time 1.269(sample 0.341 trans 0.159 graph 0.149 nn 0.063) val_time 0.028, gcn_run_time 209.288) batch_size (128, 29799)
+2025-01-08 18:33:57 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:33:58 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 163 train_loss 0.986 train_acc 0.708 val_loss 1.914 val_acc 0.694 test_acc 0.675 train_time 1.266(sample 0.343 trans 0.153 graph 0.150 nn 0.063) val_time 0.028, gcn_run_time 210.554) batch_size (128, 29799)
+2025-01-08 18:33:58 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:34:00 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 164 train_loss 0.988 train_acc 0.707 val_loss 1.889 val_acc 0.696 test_acc 0.683 train_time 1.276(sample 0.345 trans 0.160 graph 0.150 nn 0.063) val_time 0.028, gcn_run_time 211.830) batch_size (128, 29799)
+2025-01-08 18:34:00 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:34:01 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 165 train_loss 0.986 train_acc 0.708 val_loss 1.933 val_acc 0.686 test_acc 0.668 train_time 1.277(sample 0.344 trans 0.164 graph 0.149 nn 0.063) val_time 0.029, gcn_run_time 213.107) batch_size (128, 29799)
+2025-01-08 18:34:01 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:34:02 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 166 train_loss 0.989 train_acc 0.709 val_loss 1.894 val_acc 0.701 test_acc 0.691 train_time 1.286(sample 0.348 trans 0.164 graph 0.150 nn 0.063) val_time 0.029, gcn_run_time 214.393) batch_size (128, 29799)
+2025-01-08 18:34:02 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:34:04 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 167 train_loss 0.986 train_acc 0.708 val_loss 1.937 val_acc 0.695 test_acc 0.677 train_time 1.307(sample 0.355 trans 0.167 graph 0.150 nn 0.062) val_time 0.029, gcn_run_time 215.701) batch_size (128, 29799)
+2025-01-08 18:34:04 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:34:05 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 168 train_loss 0.987 train_acc 0.707 val_loss 1.976 val_acc 0.698 test_acc 0.685 train_time 1.281(sample 0.346 trans 0.164 graph 0.150 nn 0.063) val_time 0.028, gcn_run_time 216.982) batch_size (128, 29799)
+2025-01-08 18:34:05 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:34:07 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 169 train_loss 0.990 train_acc 0.706 val_loss 1.904 val_acc 0.703 test_acc 0.684 train_time 1.281(sample 0.352 trans 0.145 graph 0.149 nn 0.061) val_time 0.028, gcn_run_time 218.262) batch_size (128, 29799)
+2025-01-08 18:34:07 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:34:08 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 170 train_loss 0.985 train_acc 0.707 val_loss 1.883 val_acc 0.700 test_acc 0.685 train_time 1.264(sample 0.340 trans 0.158 graph 0.149 nn 0.061) val_time 0.029, gcn_run_time 219.527) batch_size (128, 29799)
+2025-01-08 18:34:08 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:34:09 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 171 train_loss 0.985 train_acc 0.708 val_loss 1.893 val_acc 0.707 test_acc 0.697 train_time 1.267(sample 0.341 trans 0.161 graph 0.149 nn 0.061) val_time 0.028, gcn_run_time 220.794) batch_size (128, 29799)
+2025-01-08 18:34:09 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:34:11 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 172 train_loss 0.988 train_acc 0.709 val_loss 1.875 val_acc 0.698 test_acc 0.686 train_time 1.267(sample 0.339 trans 0.162 graph 0.149 nn 0.061) val_time 0.029, gcn_run_time 222.060) batch_size (128, 29799)
+2025-01-08 18:34:11 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:34:12 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 173 train_loss 0.987 train_acc 0.707 val_loss 1.885 val_acc 0.705 test_acc 0.693 train_time 1.267(sample 0.339 trans 0.162 graph 0.149 nn 0.061) val_time 0.028, gcn_run_time 223.327) batch_size (128, 29799)
+2025-01-08 18:34:12 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:34:13 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 174 train_loss 0.988 train_acc 0.708 val_loss 1.918 val_acc 0.701 test_acc 0.682 train_time 1.290(sample 0.350 trans 0.161 graph 0.149 nn 0.060) val_time 0.028, gcn_run_time 224.618) batch_size (128, 29799)
+2025-01-08 18:34:13 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:34:15 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 175 train_loss 0.986 train_acc 0.708 val_loss 1.892 val_acc 0.705 test_acc 0.693 train_time 1.209(sample 0.345 trans 0.142 graph 0.146 nn 0.054) val_time 0.028, gcn_run_time 225.827) batch_size (128, 29799)
+2025-01-08 18:34:15 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:34:16 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 176 train_loss 0.989 train_acc 0.708 val_loss 1.904 val_acc 0.702 test_acc 0.692 train_time 1.210(sample 0.344 trans 0.142 graph 0.146 nn 0.054) val_time 0.028, gcn_run_time 227.037) batch_size (128, 29799)
+2025-01-08 18:34:16 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:34:17 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 177 train_loss 0.988 train_acc 0.707 val_loss 1.886 val_acc 0.697 test_acc 0.678 train_time 1.211(sample 0.344 trans 0.142 graph 0.146 nn 0.054) val_time 0.028, gcn_run_time 228.248) batch_size (128, 29799)
+2025-01-08 18:34:17 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:34:19 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 178 train_loss 0.988 train_acc 0.708 val_loss 1.902 val_acc 0.696 test_acc 0.681 train_time 1.209(sample 0.344 trans 0.142 graph 0.146 nn 0.054) val_time 0.028, gcn_run_time 229.457) batch_size (128, 29799)
+2025-01-08 18:34:19 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:34:20 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 179 train_loss 0.987 train_acc 0.709 val_loss 1.865 val_acc 0.699 test_acc 0.689 train_time 1.211(sample 0.344 trans 0.142 graph 0.146 nn 0.055) val_time 0.028, gcn_run_time 230.668) batch_size (128, 29799)
+2025-01-08 18:34:20 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:34:21 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 180 train_loss 0.987 train_acc 0.708 val_loss 1.936 val_acc 0.704 test_acc 0.696 train_time 1.216(sample 0.345 trans 0.143 graph 0.146 nn 0.055) val_time 0.028, gcn_run_time 231.884) batch_size (128, 29799)
+2025-01-08 18:34:21 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:34:22 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 181 train_loss 0.985 train_acc 0.708 val_loss 1.890 val_acc 0.702 test_acc 0.692 train_time 1.216(sample 0.345 trans 0.143 graph 0.146 nn 0.055) val_time 0.028, gcn_run_time 233.100) batch_size (128, 29799)
+2025-01-08 18:34:22 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:34:24 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 182 train_loss 0.985 train_acc 0.708 val_loss 1.939 val_acc 0.696 test_acc 0.682 train_time 1.305(sample 0.354 trans 0.163 graph 0.149 nn 0.061) val_time 0.029, gcn_run_time 234.405) batch_size (128, 29799)
+2025-01-08 18:34:24 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:34:25 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 183 train_loss 0.985 train_acc 0.707 val_loss 1.928 val_acc 0.696 test_acc 0.681 train_time 1.265(sample 0.338 trans 0.162 graph 0.149 nn 0.061) val_time 0.028, gcn_run_time 235.670) batch_size (128, 29799)
+2025-01-08 18:34:25 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:34:27 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 184 train_loss 0.986 train_acc 0.708 val_loss 1.882 val_acc 0.700 test_acc 0.685 train_time 1.264(sample 0.338 trans 0.162 graph 0.149 nn 0.061) val_time 0.028, gcn_run_time 236.934) batch_size (128, 29799)
+2025-01-08 18:34:27 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:34:28 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 185 train_loss 0.988 train_acc 0.708 val_loss 1.899 val_acc 0.705 test_acc 0.690 train_time 1.264(sample 0.338 trans 0.162 graph 0.149 nn 0.061) val_time 0.028, gcn_run_time 238.197) batch_size (128, 29799)
+2025-01-08 18:34:28 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:34:29 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 186 train_loss 0.986 train_acc 0.709 val_loss 1.925 val_acc 0.700 test_acc 0.686 train_time 1.266(sample 0.339 trans 0.163 graph 0.149 nn 0.061) val_time 0.028, gcn_run_time 239.463) batch_size (128, 29799)
+2025-01-08 18:34:29 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:34:31 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 187 train_loss 0.987 train_acc 0.708 val_loss 1.868 val_acc 0.708 test_acc 0.692 train_time 1.274(sample 0.343 trans 0.163 graph 0.149 nn 0.061) val_time 0.028, gcn_run_time 240.737) batch_size (128, 29799)
+2025-01-08 18:34:31 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:34:32 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 188 train_loss 0.987 train_acc 0.708 val_loss 1.884 val_acc 0.695 test_acc 0.676 train_time 1.267(sample 0.340 trans 0.162 graph 0.149 nn 0.061) val_time 0.028, gcn_run_time 242.004) batch_size (128, 29799)
+2025-01-08 18:34:32 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:34:33 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 189 train_loss 0.985 train_acc 0.708 val_loss 1.945 val_acc 0.697 test_acc 0.682 train_time 1.294(sample 0.350 trans 0.165 graph 0.149 nn 0.061) val_time 0.028, gcn_run_time 243.298) batch_size (128, 29799)
+2025-01-08 18:34:33 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:34:35 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 190 train_loss 0.985 train_acc 0.708 val_loss 1.898 val_acc 0.703 test_acc 0.693 train_time 1.265(sample 0.338 trans 0.162 graph 0.149 nn 0.061) val_time 0.028, gcn_run_time 244.563) batch_size (128, 29799)
+2025-01-08 18:34:35 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:34:36 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 191 train_loss 0.985 train_acc 0.710 val_loss 1.882 val_acc 0.700 test_acc 0.682 train_time 1.267(sample 0.340 trans 0.162 graph 0.149 nn 0.061) val_time 0.029, gcn_run_time 245.830) batch_size (128, 29799)
+2025-01-08 18:34:36 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:34:37 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 192 train_loss 0.986 train_acc 0.707 val_loss 1.860 val_acc 0.701 test_acc 0.691 train_time 1.266(sample 0.339 trans 0.163 graph 0.149 nn 0.061) val_time 0.028, gcn_run_time 247.095) batch_size (128, 29799)
+2025-01-08 18:34:37 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:34:39 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 193 train_loss 0.986 train_acc 0.708 val_loss 1.939 val_acc 0.700 test_acc 0.693 train_time 1.267(sample 0.340 trans 0.163 graph 0.149 nn 0.061) val_time 0.029, gcn_run_time 248.362) batch_size (128, 29799)
+2025-01-08 18:34:39 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:34:40 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 194 train_loss 0.987 train_acc 0.707 val_loss 1.914 val_acc 0.704 test_acc 0.694 train_time 1.268(sample 0.339 trans 0.162 graph 0.149 nn 0.061) val_time 0.028, gcn_run_time 249.630) batch_size (128, 29799)
+2025-01-08 18:34:40 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:34:42 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 195 train_loss 0.984 train_acc 0.706 val_loss 1.888 val_acc 0.703 test_acc 0.686 train_time 1.297(sample 0.352 trans 0.165 graph 0.149 nn 0.061) val_time 0.029, gcn_run_time 250.927) batch_size (128, 29799)
+2025-01-08 18:34:42 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:34:43 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 196 train_loss 0.987 train_acc 0.709 val_loss 1.921 val_acc 0.700 test_acc 0.686 train_time 1.290(sample 0.347 trans 0.164 graph 0.149 nn 0.061) val_time 0.028, gcn_run_time 252.217) batch_size (128, 29799)
+2025-01-08 18:34:43 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:34:44 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 197 train_loss 0.987 train_acc 0.707 val_loss 1.848 val_acc 0.699 test_acc 0.687 train_time 1.300(sample 0.352 trans 0.165 graph 0.149 nn 0.061) val_time 0.028, gcn_run_time 253.518) batch_size (128, 29799)
+2025-01-08 18:34:44 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:34:46 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 198 train_loss 0.988 train_acc 0.707 val_loss 1.923 val_acc 0.702 test_acc 0.686 train_time 1.298(sample 0.351 trans 0.165 graph 0.149 nn 0.061) val_time 0.028, gcn_run_time 254.815) batch_size (128, 29799)
+2025-01-08 18:34:46 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:34:47 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 199 train_loss 0.985 train_acc 0.708 val_loss 1.910 val_acc 0.701 test_acc 0.687 train_time 1.266(sample 0.339 trans 0.163 graph 0.149 nn 0.061) val_time 0.028, gcn_run_time 256.081) batch_size (128, 29799)
+2025-01-08 18:34:47 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:34:48 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 200 train_loss 0.985 train_acc 0.709 val_loss 1.918 val_acc 0.690 test_acc 0.664 train_time 1.265(sample 0.338 trans 0.163 graph 0.149 nn 0.061) val_time 0.028, gcn_run_time 257.346) batch_size (128, 29799)
+2025-01-08 18:34:48 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:34:50 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 201 train_loss 0.986 train_acc 0.708 val_loss 1.866 val_acc 0.703 test_acc 0.692 train_time 1.265(sample 0.338 trans 0.163 graph 0.149 nn 0.061) val_time 0.029, gcn_run_time 258.610) batch_size (128, 29799)
+2025-01-08 18:34:50 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:34:51 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 202 train_loss 0.987 train_acc 0.708 val_loss 1.943 val_acc 0.700 test_acc 0.688 train_time 1.288(sample 0.349 trans 0.164 graph 0.149 nn 0.061) val_time 0.028, gcn_run_time 259.898) batch_size (128, 29799)
+2025-01-08 18:34:51 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:34:53 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 203 train_loss 0.988 train_acc 0.707 val_loss 1.864 val_acc 0.706 test_acc 0.695 train_time 1.301(sample 0.352 trans 0.165 graph 0.149 nn 0.061) val_time 0.028, gcn_run_time 261.199) batch_size (128, 29799)
+2025-01-08 18:34:53 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:34:54 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 204 train_loss 0.983 train_acc 0.708 val_loss 1.885 val_acc 0.705 test_acc 0.695 train_time 1.288(sample 0.348 trans 0.164 graph 0.149 nn 0.061) val_time 0.028, gcn_run_time 262.488) batch_size (128, 29799)
+2025-01-08 18:34:54 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:34:55 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 205 train_loss 0.985 train_acc 0.708 val_loss 1.877 val_acc 0.700 test_acc 0.689 train_time 1.266(sample 0.338 trans 0.163 graph 0.149 nn 0.061) val_time 0.028, gcn_run_time 263.754) batch_size (128, 29799)
+2025-01-08 18:34:55 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:34:57 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 206 train_loss 0.986 train_acc 0.707 val_loss 1.922 val_acc 0.703 test_acc 0.689 train_time 1.265(sample 0.339 trans 0.163 graph 0.149 nn 0.061) val_time 0.028, gcn_run_time 265.019) batch_size (128, 29799)
+2025-01-08 18:34:57 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:34:58 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 207 train_loss 0.983 train_acc 0.708 val_loss 1.892 val_acc 0.698 test_acc 0.687 train_time 1.216(sample 0.343 trans 0.138 graph 0.147 nn 0.055) val_time 0.028, gcn_run_time 266.236) batch_size (128, 29799)
+2025-01-08 18:34:58 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:34:59 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 208 train_loss 0.985 train_acc 0.707 val_loss 1.911 val_acc 0.701 test_acc 0.688 train_time 1.195(sample 0.341 trans 0.138 graph 0.145 nn 0.053) val_time 0.027, gcn_run_time 267.431) batch_size (128, 29799)
+2025-01-08 18:34:59 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:35:01 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 209 train_loss 0.985 train_acc 0.709 val_loss 1.890 val_acc 0.702 test_acc 0.688 train_time 1.198(sample 0.341 trans 0.140 graph 0.146 nn 0.053) val_time 0.028, gcn_run_time 268.629) batch_size (128, 29799)
+2025-01-08 18:35:01 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:35:02 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 210 train_loss 0.986 train_acc 0.708 val_loss 1.873 val_acc 0.706 test_acc 0.692 train_time 1.199(sample 0.341 trans 0.140 graph 0.145 nn 0.053) val_time 0.028, gcn_run_time 269.827) batch_size (128, 29799)
+2025-01-08 18:35:02 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:35:03 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 211 train_loss 0.985 train_acc 0.708 val_loss 1.831 val_acc 0.703 test_acc 0.687 train_time 1.198(sample 0.340 trans 0.140 graph 0.146 nn 0.053) val_time 0.028, gcn_run_time 271.025) batch_size (128, 29799)
+2025-01-08 18:35:03 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:35:04 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 212 train_loss 0.982 train_acc 0.708 val_loss 1.888 val_acc 0.706 test_acc 0.689 train_time 1.214(sample 0.343 trans 0.142 graph 0.146 nn 0.054) val_time 0.028, gcn_run_time 272.239) batch_size (128, 29799)
+2025-01-08 18:35:04 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:35:06 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 213 train_loss 0.982 train_acc 0.709 val_loss 1.907 val_acc 0.702 test_acc 0.692 train_time 1.198(sample 0.340 trans 0.141 graph 0.145 nn 0.053) val_time 0.028, gcn_run_time 273.437) batch_size (128, 29799)
+2025-01-08 18:35:06 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:35:07 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 214 train_loss 0.985 train_acc 0.708 val_loss 1.890 val_acc 0.703 test_acc 0.695 train_time 1.197(sample 0.340 trans 0.141 graph 0.145 nn 0.053) val_time 0.028, gcn_run_time 274.634) batch_size (128, 29799)
+2025-01-08 18:35:07 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:35:08 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 215 train_loss 0.985 train_acc 0.708 val_loss 1.878 val_acc 0.698 test_acc 0.687 train_time 1.199(sample 0.341 trans 0.141 graph 0.146 nn 0.053) val_time 0.028, gcn_run_time 275.833) batch_size (128, 29799)
+2025-01-08 18:35:08 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:35:10 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 216 train_loss 0.985 train_acc 0.708 val_loss 1.864 val_acc 0.702 test_acc 0.692 train_time 1.197(sample 0.341 trans 0.141 graph 0.145 nn 0.053) val_time 0.027, gcn_run_time 277.030) batch_size (128, 29799)
+2025-01-08 18:35:10 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:35:11 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 217 train_loss 0.985 train_acc 0.709 val_loss 1.890 val_acc 0.704 test_acc 0.690 train_time 1.202(sample 0.341 trans 0.141 graph 0.146 nn 0.053) val_time 0.028, gcn_run_time 278.232) batch_size (128, 29799)
+2025-01-08 18:35:11 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:35:12 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 218 train_loss 0.983 train_acc 0.708 val_loss 1.879 val_acc 0.700 test_acc 0.685 train_time 1.199(sample 0.340 trans 0.141 graph 0.146 nn 0.053) val_time 0.027, gcn_run_time 279.431) batch_size (128, 29799)
+2025-01-08 18:35:12 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:35:13 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 219 train_loss 0.983 train_acc 0.709 val_loss 1.892 val_acc 0.703 test_acc 0.700 train_time 1.215(sample 0.343 trans 0.143 graph 0.146 nn 0.054) val_time 0.028, gcn_run_time 280.647) batch_size (128, 29799)
+2025-01-08 18:35:13 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:35:15 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 220 train_loss 0.980 train_acc 0.710 val_loss 1.908 val_acc 0.705 test_acc 0.698 train_time 1.213(sample 0.343 trans 0.143 graph 0.146 nn 0.054) val_time 0.028, gcn_run_time 281.859) batch_size (128, 29799)
+2025-01-08 18:35:15 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:35:16 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 221 train_loss 0.984 train_acc 0.709 val_loss 1.885 val_acc 0.701 test_acc 0.688 train_time 1.198(sample 0.340 trans 0.141 graph 0.145 nn 0.053) val_time 0.028, gcn_run_time 283.057) batch_size (128, 29799)
+2025-01-08 18:35:16 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:35:17 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 222 train_loss 0.982 train_acc 0.709 val_loss 1.864 val_acc 0.705 test_acc 0.694 train_time 1.199(sample 0.341 trans 0.141 graph 0.145 nn 0.053) val_time 0.028, gcn_run_time 284.256) batch_size (128, 29799)
+2025-01-08 18:35:17 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:35:19 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 223 train_loss 0.985 train_acc 0.708 val_loss 1.852 val_acc 0.702 test_acc 0.689 train_time 1.199(sample 0.341 trans 0.141 graph 0.145 nn 0.053) val_time 0.027, gcn_run_time 285.454) batch_size (128, 29799)
+2025-01-08 18:35:19 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:35:20 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 224 train_loss 0.982 train_acc 0.708 val_loss 1.886 val_acc 0.702 test_acc 0.689 train_time 1.198(sample 0.341 trans 0.141 graph 0.146 nn 0.053) val_time 0.028, gcn_run_time 286.652) batch_size (128, 29799)
+2025-01-08 18:35:20 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:35:21 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 225 train_loss 0.984 train_acc 0.708 val_loss 1.926 val_acc 0.697 test_acc 0.684 train_time 1.243(sample 0.346 trans 0.151 graph 0.147 nn 0.056) val_time 0.028, gcn_run_time 287.895) batch_size (128, 29799)
+2025-01-08 18:35:21 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:35:23 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 226 train_loss 0.983 train_acc 0.710 val_loss 1.915 val_acc 0.703 test_acc 0.693 train_time 1.255(sample 0.336 trans 0.160 graph 0.149 nn 0.059) val_time 0.028, gcn_run_time 289.150) batch_size (128, 29799)
+2025-01-08 18:35:23 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:35:24 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 227 train_loss 0.985 train_acc 0.707 val_loss 1.916 val_acc 0.702 test_acc 0.686 train_time 1.259(sample 0.338 trans 0.161 graph 0.149 nn 0.059) val_time 0.028, gcn_run_time 290.409) batch_size (128, 29799)
+2025-01-08 18:35:24 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:35:25 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 228 train_loss 0.983 train_acc 0.709 val_loss 1.937 val_acc 0.701 test_acc 0.687 train_time 1.257(sample 0.338 trans 0.161 graph 0.149 nn 0.059) val_time 0.028, gcn_run_time 291.665) batch_size (128, 29799)
+2025-01-08 18:35:25 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:35:27 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 229 train_loss 0.984 train_acc 0.707 val_loss 1.887 val_acc 0.696 test_acc 0.677 train_time 1.279(sample 0.347 trans 0.163 graph 0.149 nn 0.059) val_time 0.028, gcn_run_time 292.945) batch_size (128, 29799)
+2025-01-08 18:35:27 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:35:28 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 230 train_loss 0.982 train_acc 0.710 val_loss 1.918 val_acc 0.699 test_acc 0.685 train_time 1.254(sample 0.336 trans 0.161 graph 0.148 nn 0.059) val_time 0.028, gcn_run_time 294.199) batch_size (128, 29799)
+2025-01-08 18:35:28 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:35:29 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 231 train_loss 0.983 train_acc 0.711 val_loss 1.874 val_acc 0.701 test_acc 0.694 train_time 1.252(sample 0.335 trans 0.161 graph 0.149 nn 0.059) val_time 0.028, gcn_run_time 295.451) batch_size (128, 29799)
+2025-01-08 18:35:29 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:35:31 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 232 train_loss 0.986 train_acc 0.709 val_loss 1.872 val_acc 0.707 test_acc 0.696 train_time 1.254(sample 0.343 trans 0.147 graph 0.149 nn 0.059) val_time 0.028, gcn_run_time 296.705) batch_size (128, 29799)
+2025-01-08 18:35:31 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:35:32 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 233 train_loss 0.984 train_acc 0.709 val_loss 1.882 val_acc 0.704 test_acc 0.689 train_time 1.243(sample 0.334 trans 0.154 graph 0.149 nn 0.059) val_time 0.028, gcn_run_time 297.948) batch_size (128, 29799)
+2025-01-08 18:35:32 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:35:33 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 234 train_loss 0.985 train_acc 0.708 val_loss 1.873 val_acc 0.706 test_acc 0.694 train_time 1.245(sample 0.334 trans 0.157 graph 0.149 nn 0.059) val_time 0.028, gcn_run_time 299.193) batch_size (128, 29799)
+2025-01-08 18:35:33 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2025-01-08 18:35:35 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 235 train_loss 0.983 train_acc 0.709 val_loss 1.865 val_acc 0.707 test_acc 0.694 train_time 1.264(sample 0.342 trans 0.159 graph 0.148 nn 0.059) val_time 0.028, gcn_run_time 300.457) batch_size (128, 29799)
+
+main(): Best-val-acc: 0.707876 
+Val-mean-var 1 runs: 0.7079(0.0000)
+edge_file: ../data/ogbn-arxiv/ogbn-arxiv.edge
+exec_time=332.148375(s)
