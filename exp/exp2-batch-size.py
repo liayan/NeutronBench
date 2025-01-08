@@ -102,7 +102,7 @@ def run(dataset, cmd, log_path, suffix=''):
     with open('tmp.cfg', 'w') as f:
         f.write(cmd)
 
-    run_command = f'mpiexec -hostfile hostfile -np 1 ./build/nts tmp.cfg > {log_path}/{dataset}{suffix}.log'
+    run_command = f'mpiexec --allow-run-as-root -hostfile hostfile -np 1 ./build/nts tmp.cfg > {log_path}/{dataset}{suffix}.log'
     print('running: ', run_command)
     os.system(run_command)
 
