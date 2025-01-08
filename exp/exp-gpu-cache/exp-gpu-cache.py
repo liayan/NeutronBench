@@ -65,8 +65,8 @@ graph_config = {
     "VERTICES:992712\nEDGE_FILE:../../data/rmat/rmat.edge\nFEATURE_FILE:random\nLABEL_FILE:random\nMASK_FILE:random\nLAYERS:600-128-60\n",
     'rmat':
     "VERTICES:1000000\nEDGE_FILE:../../data/rmat/rmat.edge\nFEATURE_FILE:random\nLABEL_FILE:random\nMASK_FILE:random\nLAYERS:600-128-60\n",
-    'ogbn-papers100M':
-    "VERTICES:111059956\nEDGE_FILE:../../data/ogbn-papers100M/ogbn-papers100M.edge\nFEATURE_FILE:random\nLABEL_FILE:random\nMASK_FILE:random\nLAYERS:5-4-2\n",
+#    'ogbn-papers100M':
+#    "VERTICES:111059956\nEDGE_FILE:../../data/ogbn-papers100M/ogbn-papers100M.edge\nFEATURE_FILE:random\nLABEL_FILE:random\nMASK_FILE:random\nLAYERS:5-4-2\n",
 }
 
 # vertex: 992712 edges: 199489178

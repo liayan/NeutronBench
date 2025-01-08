@@ -150,9 +150,9 @@ if __name__ == '__main__':
     }
 
     run_times = {
-        'reddit': 300,
+        'reddit': 5,
         'ogbn-arxiv': 300,
-        'ogbn-products': 300,
+        'ogbn-products': 5,
     }
 
     datasets = ['reddit', 'ogbn-products']
