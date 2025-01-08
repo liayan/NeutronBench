@@ -1,0 +1,161 @@
+algorithm	:	GCNNEIGHBORGPUCACHEEXP
+vertices	:	111059956
+epochs		:	1
+layers		:	5-4-2
+fanout		:	10,25
+val_fanout	:	
+batch_size	:	2048
+val_batch_size	:	0
+batch_type	:	shuffle
+del_frac	:	0
+dataset:	:	ogbn-papers100M
+edge_file	:	../data/ogbn-papers100M/ogbn-papers100M.edge
+feature_file	:	random
+label_file	:	random
+mask_file	:	random
+proc_overlap	:	0
+proc_local	:	0
+proc_cuda	:	0
+proc_rep	:	0
+lock_free	:	1
+optim_kernel	:	0
+learn_rate	:	0.01
+weight_decay	:	0.0001
+decay_rate	:	0.97
+decay_epoch	:	100
+drop_rate	:	0.5
+classes		:	1
+batch_norm	:	0
+time_skip	:	0
+runs		:	1
+mini_pull	:	1
+sample_rate	:	-1
+run_time	:	-1
+batch_switch_time:	-1
+batch_size_vec_string:	
+sample_switch_time:	-1
+sample_rate_vec_string:	
+lower_fanout	:	0
+cache_rate	:	0
+cache_policy	:	sample
+cache_type	:	rate
+batch_switch_acc:	-1
+pipelines	:	3
+threads		:	-1
+mode		:	pipeline
+best_parameter	:	0
+threshold_trans	:	-1
+cache_rate_start	:	0
+cache_rate_end	:	1
+cache_rate_num	:	25
+trans_threshold_start	:	0
+trans_threshold_end	:	0
+trans_threshold_num	:	0
+block_size	:	256
+cache_exp	:	0
+part_num	:	0
+part_algo	:	
+part_dim	:	0
+target_degree	:	0
+------------------input info--------------
+NeutronStar::Preprocessing[Generate Full Replicated Graph Topo]
+------------------finish graph preprocessing--------------
+
+read_finish
+2025-01-08 19:44:30 [main.cpp:219 :main] DEBUG - init_graph cost 30.382
+2025-01-08 19:44:40 [ntsDataloador.hpp:155 :random_generate] DEBUG - local_mask: (72188935 11105990 27765031) (2.6 0.4 1.0)
+2025-01-08 19:44:40 [GCN_GPU_NEIGHBOR-cache-exp.hpp:551 :init_nn] DEBUG - generate feat_label_mask is done
+2025-01-08 19:44:40 [main.cpp:224 :main] DEBUG - init_nn cost 40.580
+2025-01-08 19:44:41 [GCN_GPU_NEIGHBOR-cache-exp.hpp:1125 :run] INFO  - label rate: 1.000, train/val/test: (72188935/11105990/27765031) (0.650/0.100/0.250)
+destrory_stream 0x64af41dbbb20destory_Stream is done
+set cuda_steram 0x64af41dbbb20 to 0x64af41dca7c0
+set cuda_steram 0x64af41dca7c0 to 0x64af41dca7c0
+destrory_stream 0x64af41db4d60destory_Stream is done
+set cuda_steram 0x64af41db4d60 to 0x64af41dca940
+set cuda_steram 0x64af41dca940 to 0x64af41dca940
+destrory_stream 0x64af41db46a0destory_Stream is done
+set cuda_steram 0x64af41db46a0 to 0x64af41dcaac0
+set cuda_steram 0x64af41dcaac0 to 0x64af41dcaac0
+2025-01-08 19:44:42 [ntsSampler.hpp:261 :update_batch_size] DEBUG - batch_size switch to 2048
+2025-01-08 19:44:42 [GCN_GPU_NEIGHBOR-cache-exp.hpp:495 :determine_cache_node_seq] DEBUG - cache_sample
+2025-01-08 19:51:58 [GCN_GPU_NEIGHBOR-cache-exp.hpp:1147 :run] DEBUG - determine_cache_node_seq cost 435.956
+2025-01-08 20:13:32 [GCN_GPU_NEIGHBOR-cache-exp.hpp:1156 :run] DEBUG - get_sample_nodes_one_epoch 1292.070
+2025-01-08 20:14:17 [GCN_GPU_NEIGHBOR-cache-exp.hpp:1185 :run] DEBUG - epoch_cache_hit 0 epoch_all_nodes 3038628841
+2025-01-08 20:14:17 [GCN_GPU_NEIGHBOR-cache-exp.hpp:1188 :run] INFO  - Epoch -01 epoch_time 44.398 cache_rate 0.000 cache_hit_rate 0.000
+2025-01-08 20:14:17 [GCN_GPU_NEIGHBOR-cache-exp.hpp:1195 :run] DEBUG - dataset ogbn-papers100M gcn_cache_num 0 gcn_cache_rate 0.000 gcn_cache_hit_rate 0.000 gcn_cache_type rate batch_size 2048 gpu_used_memory 2267.000
+2025-01-08 20:15:17 [GCN_GPU_NEIGHBOR-cache-exp.hpp:1185 :run] DEBUG - epoch_cache_hit 1085246161 epoch_all_nodes 3038628841
+2025-01-08 20:15:17 [GCN_GPU_NEIGHBOR-cache-exp.hpp:1188 :run] INFO  - Epoch -01 epoch_time 60.219 cache_rate 0.040 cache_hit_rate 0.357
+2025-01-08 20:15:17 [GCN_GPU_NEIGHBOR-cache-exp.hpp:1195 :run] DEBUG - dataset ogbn-papers100M gcn_cache_num 4442398 gcn_cache_rate 0.040 gcn_cache_hit_rate 0.357 gcn_cache_type rate batch_size 2048 gpu_used_memory 2267.000
+2025-01-08 20:16:20 [GCN_GPU_NEIGHBOR-cache-exp.hpp:1185 :run] DEBUG - epoch_cache_hit 1552192110 epoch_all_nodes 3038628841
+2025-01-08 20:16:20 [GCN_GPU_NEIGHBOR-cache-exp.hpp:1188 :run] INFO  - Epoch -01 epoch_time 63.171 cache_rate 0.080 cache_hit_rate 0.511
+2025-01-08 20:16:20 [GCN_GPU_NEIGHBOR-cache-exp.hpp:1195 :run] DEBUG - dataset ogbn-papers100M gcn_cache_num 8884796 gcn_cache_rate 0.080 gcn_cache_hit_rate 0.511 gcn_cache_type rate batch_size 2048 gpu_used_memory 2267.000
+2025-01-08 20:17:22 [GCN_GPU_NEIGHBOR-cache-exp.hpp:1185 :run] DEBUG - epoch_cache_hit 1873574526 epoch_all_nodes 3038628841
+2025-01-08 20:17:22 [GCN_GPU_NEIGHBOR-cache-exp.hpp:1188 :run] INFO  - Epoch -01 epoch_time 61.730 cache_rate 0.120 cache_hit_rate 0.617
+2025-01-08 20:17:22 [GCN_GPU_NEIGHBOR-cache-exp.hpp:1195 :run] DEBUG - dataset ogbn-papers100M gcn_cache_num 13327194 gcn_cache_rate 0.120 gcn_cache_hit_rate 0.617 gcn_cache_type rate batch_size 2048 gpu_used_memory 2267.000
+2025-01-08 20:18:21 [GCN_GPU_NEIGHBOR-cache-exp.hpp:1185 :run] DEBUG - epoch_cache_hit 2114834234 epoch_all_nodes 3038628841
+2025-01-08 20:18:21 [GCN_GPU_NEIGHBOR-cache-exp.hpp:1188 :run] INFO  - Epoch -01 epoch_time 58.684 cache_rate 0.160 cache_hit_rate 0.696
+2025-01-08 20:18:21 [GCN_GPU_NEIGHBOR-cache-exp.hpp:1195 :run] DEBUG - dataset ogbn-papers100M gcn_cache_num 17769592 gcn_cache_rate 0.160 gcn_cache_hit_rate 0.696 gcn_cache_type rate batch_size 2048 gpu_used_memory 2267.000
+2025-01-08 20:19:17 [GCN_GPU_NEIGHBOR-cache-exp.hpp:1185 :run] DEBUG - epoch_cache_hit 2303435742 epoch_all_nodes 3038628841
+2025-01-08 20:19:17 [GCN_GPU_NEIGHBOR-cache-exp.hpp:1188 :run] INFO  - Epoch -01 epoch_time 55.697 cache_rate 0.200 cache_hit_rate 0.758
+2025-01-08 20:19:17 [GCN_GPU_NEIGHBOR-cache-exp.hpp:1195 :run] DEBUG - dataset ogbn-papers100M gcn_cache_num 22211990 gcn_cache_rate 0.200 gcn_cache_hit_rate 0.758 gcn_cache_type rate batch_size 2048 gpu_used_memory 2267.000
+2025-01-08 20:20:11 [GCN_GPU_NEIGHBOR-cache-exp.hpp:1185 :run] DEBUG - epoch_cache_hit 2454011965 epoch_all_nodes 3038628841
+2025-01-08 20:20:11 [GCN_GPU_NEIGHBOR-cache-exp.hpp:1188 :run] INFO  - Epoch -01 epoch_time 53.411 cache_rate 0.240 cache_hit_rate 0.808
+2025-01-08 20:20:11 [GCN_GPU_NEIGHBOR-cache-exp.hpp:1195 :run] DEBUG - dataset ogbn-papers100M gcn_cache_num 26654388 gcn_cache_rate 0.240 gcn_cache_hit_rate 0.808 gcn_cache_type rate batch_size 2048 gpu_used_memory 2267.000
+2025-01-08 20:21:03 [GCN_GPU_NEIGHBOR-cache-exp.hpp:1185 :run] DEBUG - epoch_cache_hit 2575699614 epoch_all_nodes 3038628841
+2025-01-08 20:21:03 [GCN_GPU_NEIGHBOR-cache-exp.hpp:1188 :run] INFO  - Epoch -01 epoch_time 51.620 cache_rate 0.280 cache_hit_rate 0.848
+2025-01-08 20:21:03 [GCN_GPU_NEIGHBOR-cache-exp.hpp:1195 :run] DEBUG - dataset ogbn-papers100M gcn_cache_num 31096786 gcn_cache_rate 0.280 gcn_cache_hit_rate 0.848 gcn_cache_type rate batch_size 2048 gpu_used_memory 2267.000
+2025-01-08 20:21:54 [GCN_GPU_NEIGHBOR-cache-exp.hpp:1185 :run] DEBUG - epoch_cache_hit 2674730620 epoch_all_nodes 3038628841
+2025-01-08 20:21:54 [GCN_GPU_NEIGHBOR-cache-exp.hpp:1188 :run] INFO  - Epoch -01 epoch_time 50.267 cache_rate 0.320 cache_hit_rate 0.880
+2025-01-08 20:21:54 [GCN_GPU_NEIGHBOR-cache-exp.hpp:1195 :run] DEBUG - dataset ogbn-papers100M gcn_cache_num 35539184 gcn_cache_rate 0.320 gcn_cache_hit_rate 0.880 gcn_cache_type rate batch_size 2048 gpu_used_memory 2267.000
+2025-01-08 20:22:43 [GCN_GPU_NEIGHBOR-cache-exp.hpp:1185 :run] DEBUG - epoch_cache_hit 2755328663 epoch_all_nodes 3038628841
+2025-01-08 20:22:43 [GCN_GPU_NEIGHBOR-cache-exp.hpp:1188 :run] INFO  - Epoch -01 epoch_time 49.202 cache_rate 0.360 cache_hit_rate 0.907
+2025-01-08 20:22:43 [GCN_GPU_NEIGHBOR-cache-exp.hpp:1195 :run] DEBUG - dataset ogbn-papers100M gcn_cache_num 39981580 gcn_cache_rate 0.360 gcn_cache_hit_rate 0.907 gcn_cache_type rate batch_size 2048 gpu_used_memory 2267.000
+2025-01-08 20:23:32 [GCN_GPU_NEIGHBOR-cache-exp.hpp:1185 :run] DEBUG - epoch_cache_hit 2821019406 epoch_all_nodes 3038628841
+2025-01-08 20:23:32 [GCN_GPU_NEIGHBOR-cache-exp.hpp:1188 :run] INFO  - Epoch -01 epoch_time 48.412 cache_rate 0.400 cache_hit_rate 0.928
+2025-01-08 20:23:32 [GCN_GPU_NEIGHBOR-cache-exp.hpp:1195 :run] DEBUG - dataset ogbn-papers100M gcn_cache_num 44423980 gcn_cache_rate 0.400 gcn_cache_hit_rate 0.928 gcn_cache_type rate batch_size 2048 gpu_used_memory 2267.000
+2025-01-08 20:24:21 [GCN_GPU_NEIGHBOR-cache-exp.hpp:1185 :run] DEBUG - epoch_cache_hit 2874230914 epoch_all_nodes 3038628841
+2025-01-08 20:24:21 [GCN_GPU_NEIGHBOR-cache-exp.hpp:1188 :run] INFO  - Epoch -01 epoch_time 47.852 cache_rate 0.440 cache_hit_rate 0.946
+2025-01-08 20:24:21 [GCN_GPU_NEIGHBOR-cache-exp.hpp:1195 :run] DEBUG - dataset ogbn-papers100M gcn_cache_num 48866380 gcn_cache_rate 0.440 gcn_cache_hit_rate 0.946 gcn_cache_type rate batch_size 2048 gpu_used_memory 2267.000
+2025-01-08 20:25:09 [GCN_GPU_NEIGHBOR-cache-exp.hpp:1185 :run] DEBUG - epoch_cache_hit 2916801544 epoch_all_nodes 3038628841
+2025-01-08 20:25:09 [GCN_GPU_NEIGHBOR-cache-exp.hpp:1188 :run] INFO  - Epoch -01 epoch_time 47.265 cache_rate 0.480 cache_hit_rate 0.960
+2025-01-08 20:25:09 [GCN_GPU_NEIGHBOR-cache-exp.hpp:1195 :run] DEBUG - dataset ogbn-papers100M gcn_cache_num 53308776 gcn_cache_rate 0.480 gcn_cache_hit_rate 0.960 gcn_cache_type rate batch_size 2048 gpu_used_memory 2267.000
+2025-01-08 20:25:56 [GCN_GPU_NEIGHBOR-cache-exp.hpp:1185 :run] DEBUG - epoch_cache_hit 2950524507 epoch_all_nodes 3038628841
+2025-01-08 20:25:56 [GCN_GPU_NEIGHBOR-cache-exp.hpp:1188 :run] INFO  - Epoch -01 epoch_time 46.865 cache_rate 0.520 cache_hit_rate 0.971
+2025-01-08 20:25:56 [GCN_GPU_NEIGHBOR-cache-exp.hpp:1195 :run] DEBUG - dataset ogbn-papers100M gcn_cache_num 57751172 gcn_cache_rate 0.520 gcn_cache_hit_rate 0.971 gcn_cache_type rate batch_size 2048 gpu_used_memory 2267.000
+2025-01-08 20:26:44 [GCN_GPU_NEIGHBOR-cache-exp.hpp:1185 :run] DEBUG - epoch_cache_hit 2976290343 epoch_all_nodes 3038628841
+2025-01-08 20:26:44 [GCN_GPU_NEIGHBOR-cache-exp.hpp:1188 :run] INFO  - Epoch -01 epoch_time 46.596 cache_rate 0.560 cache_hit_rate 0.979
+2025-01-08 20:26:44 [GCN_GPU_NEIGHBOR-cache-exp.hpp:1195 :run] DEBUG - dataset ogbn-papers100M gcn_cache_num 62193572 gcn_cache_rate 0.560 gcn_cache_hit_rate 0.979 gcn_cache_type rate batch_size 2048 gpu_used_memory 2267.000
+2025-01-08 20:27:31 [GCN_GPU_NEIGHBOR-cache-exp.hpp:1185 :run] DEBUG - epoch_cache_hit 2995041829 epoch_all_nodes 3038628841
+2025-01-08 20:27:31 [GCN_GPU_NEIGHBOR-cache-exp.hpp:1188 :run] INFO  - Epoch -01 epoch_time 46.489 cache_rate 0.600 cache_hit_rate 0.986
+2025-01-08 20:27:31 [GCN_GPU_NEIGHBOR-cache-exp.hpp:1195 :run] DEBUG - dataset ogbn-papers100M gcn_cache_num 66635968 gcn_cache_rate 0.600 gcn_cache_hit_rate 0.986 gcn_cache_type rate batch_size 2048 gpu_used_memory 2267.000
+2025-01-08 20:28:18 [GCN_GPU_NEIGHBOR-cache-exp.hpp:1185 :run] DEBUG - epoch_cache_hit 3007469817 epoch_all_nodes 3038628841
+2025-01-08 20:28:18 [GCN_GPU_NEIGHBOR-cache-exp.hpp:1188 :run] INFO  - Epoch -01 epoch_time 46.080 cache_rate 0.640 cache_hit_rate 0.990
+2025-01-08 20:28:18 [GCN_GPU_NEIGHBOR-cache-exp.hpp:1195 :run] DEBUG - dataset ogbn-papers100M gcn_cache_num 71078368 gcn_cache_rate 0.640 gcn_cache_hit_rate 0.990 gcn_cache_type rate batch_size 2048 gpu_used_memory 2267.000
+2025-01-08 20:29:05 [GCN_GPU_NEIGHBOR-cache-exp.hpp:1185 :run] DEBUG - epoch_cache_hit 3013946740 epoch_all_nodes 3038628841
+2025-01-08 20:29:05 [GCN_GPU_NEIGHBOR-cache-exp.hpp:1188 :run] INFO  - Epoch -01 epoch_time 45.509 cache_rate 0.680 cache_hit_rate 0.992
+2025-01-08 20:29:05 [GCN_GPU_NEIGHBOR-cache-exp.hpp:1195 :run] DEBUG - dataset ogbn-papers100M gcn_cache_num 75520768 gcn_cache_rate 0.680 gcn_cache_hit_rate 0.992 gcn_cache_type rate batch_size 2048 gpu_used_memory 2267.000
+2025-01-08 20:29:51 [GCN_GPU_NEIGHBOR-cache-exp.hpp:1185 :run] DEBUG - epoch_cache_hit 3018563192 epoch_all_nodes 3038628841
+2025-01-08 20:29:51 [GCN_GPU_NEIGHBOR-cache-exp.hpp:1188 :run] INFO  - Epoch -01 epoch_time 45.490 cache_rate 0.720 cache_hit_rate 0.993
+2025-01-08 20:29:51 [GCN_GPU_NEIGHBOR-cache-exp.hpp:1195 :run] DEBUG - dataset ogbn-papers100M gcn_cache_num 79963160 gcn_cache_rate 0.720 gcn_cache_hit_rate 0.993 gcn_cache_type rate batch_size 2048 gpu_used_memory 2267.000
+2025-01-08 20:30:38 [GCN_GPU_NEIGHBOR-cache-exp.hpp:1185 :run] DEBUG - epoch_cache_hit 3023170750 epoch_all_nodes 3038628841
+2025-01-08 20:30:38 [GCN_GPU_NEIGHBOR-cache-exp.hpp:1188 :run] INFO  - Epoch -01 epoch_time 45.457 cache_rate 0.760 cache_hit_rate 0.995
+2025-01-08 20:30:38 [GCN_GPU_NEIGHBOR-cache-exp.hpp:1195 :run] DEBUG - dataset ogbn-papers100M gcn_cache_num 84405560 gcn_cache_rate 0.760 gcn_cache_hit_rate 0.995 gcn_cache_type rate batch_size 2048 gpu_used_memory 2267.000
+2025-01-08 20:31:24 [GCN_GPU_NEIGHBOR-cache-exp.hpp:1185 :run] DEBUG - epoch_cache_hit 3027988936 epoch_all_nodes 3038628841
+2025-01-08 20:31:24 [GCN_GPU_NEIGHBOR-cache-exp.hpp:1188 :run] INFO  - Epoch -01 epoch_time 45.387 cache_rate 0.800 cache_hit_rate 0.996
+2025-01-08 20:31:24 [GCN_GPU_NEIGHBOR-cache-exp.hpp:1195 :run] DEBUG - dataset ogbn-papers100M gcn_cache_num 88847960 gcn_cache_rate 0.800 gcn_cache_hit_rate 0.996 gcn_cache_type rate batch_size 2048 gpu_used_memory 2267.000
+2025-01-08 20:32:11 [GCN_GPU_NEIGHBOR-cache-exp.hpp:1185 :run] DEBUG - epoch_cache_hit 3032787732 epoch_all_nodes 3038628841
+2025-01-08 20:32:11 [GCN_GPU_NEIGHBOR-cache-exp.hpp:1188 :run] INFO  - Epoch -01 epoch_time 45.343 cache_rate 0.840 cache_hit_rate 0.998
+2025-01-08 20:32:11 [GCN_GPU_NEIGHBOR-cache-exp.hpp:1195 :run] DEBUG - dataset ogbn-papers100M gcn_cache_num 93290360 gcn_cache_rate 0.840 gcn_cache_hit_rate 0.998 gcn_cache_type rate batch_size 2048 gpu_used_memory 2267.000
+2025-01-08 20:32:57 [GCN_GPU_NEIGHBOR-cache-exp.hpp:1185 :run] DEBUG - epoch_cache_hit 3037364747 epoch_all_nodes 3038628841
+2025-01-08 20:32:57 [GCN_GPU_NEIGHBOR-cache-exp.hpp:1188 :run] INFO  - Epoch -01 epoch_time 45.356 cache_rate 0.880 cache_hit_rate 1.000
+2025-01-08 20:32:57 [GCN_GPU_NEIGHBOR-cache-exp.hpp:1195 :run] DEBUG - dataset ogbn-papers100M gcn_cache_num 97732760 gcn_cache_rate 0.880 gcn_cache_hit_rate 1.000 gcn_cache_type rate batch_size 2048 gpu_used_memory 2267.000
+2025-01-08 20:33:44 [GCN_GPU_NEIGHBOR-cache-exp.hpp:1185 :run] DEBUG - epoch_cache_hit 3037870950 epoch_all_nodes 3038628841
+2025-01-08 20:33:44 [GCN_GPU_NEIGHBOR-cache-exp.hpp:1188 :run] INFO  - Epoch -01 epoch_time 45.393 cache_rate 0.920 cache_hit_rate 1.000
+2025-01-08 20:33:44 [GCN_GPU_NEIGHBOR-cache-exp.hpp:1195 :run] DEBUG - dataset ogbn-papers100M gcn_cache_num 102175152 gcn_cache_rate 0.920 gcn_cache_hit_rate 1.000 gcn_cache_type rate batch_size 2048 gpu_used_memory 2267.000
+2025-01-08 20:34:30 [GCN_GPU_NEIGHBOR-cache-exp.hpp:1185 :run] DEBUG - epoch_cache_hit 3038300140 epoch_all_nodes 3038628841
+2025-01-08 20:34:30 [GCN_GPU_NEIGHBOR-cache-exp.hpp:1188 :run] INFO  - Epoch -01 epoch_time 45.345 cache_rate 0.960 cache_hit_rate 1.000
+2025-01-08 20:34:30 [GCN_GPU_NEIGHBOR-cache-exp.hpp:1195 :run] DEBUG - dataset ogbn-papers100M gcn_cache_num 106617552 gcn_cache_rate 0.960 gcn_cache_hit_rate 1.000 gcn_cache_type rate batch_size 2048 gpu_used_memory 2267.000
+2025-01-08 20:35:16 [GCN_GPU_NEIGHBOR-cache-exp.hpp:1185 :run] DEBUG - epoch_cache_hit 3038628841 epoch_all_nodes 3038628841
+2025-01-08 20:35:16 [GCN_GPU_NEIGHBOR-cache-exp.hpp:1188 :run] INFO  - Epoch -01 epoch_time 45.315 cache_rate 1.000 cache_hit_rate 1.000
+2025-01-08 20:35:16 [GCN_GPU_NEIGHBOR-cache-exp.hpp:1195 :run] DEBUG - dataset ogbn-papers100M gcn_cache_num 111059952 gcn_cache_rate 1.000 gcn_cache_hit_rate 1.000 gcn_cache_type rate batch_size 2048 gpu_used_memory 2267.000
+exec_time=3757.018055(s)
