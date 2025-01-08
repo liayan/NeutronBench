@@ -1,0 +1,96 @@
+algorithm	:	GCNNEIGHBORGPU
+vertices	:	2449029
+epochs		:	3
+layers		:	100-128-47
+fanout		:	10,25
+val_fanout	:	10,25
+batch_size	:	128
+val_batch_size	:	0
+batch_type	:	shuffle
+del_frac	:	0
+dataset:	:	ogbn-products
+edge_file	:	../../data/ogbn-products/ogbn-products.edge
+feature_file	:	../../data/ogbn-products/ogbn-products.feat
+label_file	:	../../data/ogbn-products/ogbn-products.label
+mask_file	:	../../data/ogbn-products/ogbn-products.mask
+proc_overlap	:	0
+proc_local	:	0
+proc_cuda	:	0
+proc_rep	:	0
+lock_free	:	1
+optim_kernel	:	0
+learn_rate	:	0.001
+weight_decay	:	0.0001
+decay_rate	:	0.97
+decay_epoch	:	100
+drop_rate	:	0.5
+classes		:	1
+batch_norm	:	0
+time_skip	:	3
+runs		:	1
+mini_pull	:	1
+sample_rate	:	-1
+run_time	:	5
+batch_switch_time:	-1
+batch_size_vec_string:	
+sample_switch_time:	-1
+sample_rate_vec_string:	
+lower_fanout	:	0
+cache_rate	:	0
+cache_policy	:	degree
+cache_type	:	gpu_memory
+batch_switch_acc:	-1
+pipelines	:	1
+threads		:	-1
+mode		:	zerocopy
+best_parameter	:	0
+threshold_trans	:	-1
+cache_rate_start	:	0
+cache_rate_end	:	0
+cache_rate_num	:	0
+trans_threshold_start	:	0
+trans_threshold_end	:	0
+trans_threshold_num	:	0
+block_size	:	256
+cache_exp	:	0
+part_num	:	0
+part_algo	:	
+part_dim	:	0
+target_degree	:	0
+------------------input info--------------
+NeutronStar::Preprocessing[Generate Full Replicated Graph Topo]
+------------------finish graph preprocessing--------------
+
+read_finish
+2024-12-19 19:13:27 [GCN_GPU_NEIGHBOR.hpp:1333 :run] INFO  - GNNmini::[Dist.GPU.GCNimpl] running [3] Epoches
+
+destrory_stream 0x598b52592500destory_Stream is done
+set cuda_steram 0x598b52592500 to 0x598b5258c730
+set cuda_steram 0x598b5258c730 to 0x598b5258c730
+2024-12-19 19:13:27 [ntsSampler.hpp:261 :update_batch_size] DEBUG - batch_size switch to 128
+train sampler 25, 10, 
+2024-12-19 19:13:27 [ntsSampler.hpp:261 :update_batch_size] DEBUG - batch_size switch to 128
+2024-12-19 19:13:27 [ntsSampler.hpp:261 :update_batch_size] DEBUG - batch_size switch to 39323
+val sampler 25, 10, 
+val subgraph sampler 25, 10, 
+2024-12-19 19:13:27 [ntsSampler.hpp:261 :update_batch_size] DEBUG - batch_size switch to 128
+test sampler 25, 10, 
+test subgraph sampler 25, 10, 
+2024-12-19 19:13:27 [GCN_GPU_NEIGHBOR.hpp:1415 :run] INFO  - label rate: 1.000, train/val/test: (196615/39323/2213091) (0.080/0.016/0.904)
+2024-12-19 19:13:27 [GCN_GPU_NEIGHBOR.hpp:1423 :run] DEBUG - iterations 2147483647 config_run_time 5.000
+2024-12-19 19:13:27 [GCN_GPU_NEIGHBOR.hpp:1430 :run] DEBUG - start get_gpu_idle_mem_pipe()
+2024-12-19 19:13:34 [GCN_GPU_NEIGHBOR.hpp:1200 :get_gpu_idle_mem_pipe] DEBUG - get_gpu_idle_mem_pipe(): epoch 0 used 1417.000 max_used 1417.000 total 81050.625
+2024-12-19 19:13:34 [GCN_GPU_NEIGHBOR.hpp:1432 :run] DEBUG - release gpu memory
+2024-12-19 19:13:34 [GCN_GPU_NEIGHBOR.hpp:1435 :run] DEBUG - used 1377.000 total 81050.625 (after emptyCache)
+2024-12-19 19:13:34 [GCN_GPU_NEIGHBOR.hpp:1217 :determine_cache_node_idx] DEBUG - cache_node_num 2449029 (1.000)
+2024-12-19 19:13:34 [GCN_GPU_NEIGHBOR.hpp:1236 :determine_cache_node_idx] DEBUG - cache_high_degree
+2024-12-19 19:13:34 [GCN_GPU_NEIGHBOR.hpp:945 :mark_cache_node] DEBUG - cache_node_num 2449029 tmp_idx 2449029
+2024-12-19 19:13:34 [GCN_GPU_NEIGHBOR.hpp:922 :gater_cpu_cache_feature_and_trans_to_gpu] DEBUG - start trans to gpu
+2024-12-19 19:13:34 [GCN_GPU_NEIGHBOR.hpp:1441 :run] DEBUG - used 2313.000 total 81050.625 (after cache feature)
+2024-12-19 19:13:34 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2024-12-19 19:13:42 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 000 train_loss 0.628 train_acc 0.850 val_loss 0.942 val_acc 0.881 test_acc 0.700 train_time 5.107(sample 2.469 trans 0.791 graph 0.482 nn 0.134) val_time 0.282, gcn_run_time 5.107) batch_size (128, 39323)
+
+main(): Best-val-acc: 0.881215 
+Val-mean-var 1 runs: 0.8812(0.0000)
+edge_file: ../../data/ogbn-products/ogbn-products.edge
+exec_time=96.174084(s)

@@ -1,0 +1,110 @@
+algorithm	:	GCNNEIGHBORGPU
+vertices	:	232965
+epochs		:	3
+layers		:	602-128-41
+fanout		:	10,25
+val_fanout	:	10,25
+batch_size	:	65536
+val_batch_size	:	0
+batch_type	:	shuffle
+del_frac	:	0
+dataset:	:	reddit
+edge_file	:	../../data/reddit/reddit.edge
+feature_file	:	../../data/reddit/reddit.feat
+label_file	:	../../data/reddit/reddit.label
+mask_file	:	../../data/reddit/reddit.mask
+proc_overlap	:	0
+proc_local	:	0
+proc_cuda	:	0
+proc_rep	:	0
+lock_free	:	1
+optim_kernel	:	0
+learn_rate	:	0.001
+weight_decay	:	0.0001
+decay_rate	:	0.97
+decay_epoch	:	100
+drop_rate	:	0.5
+classes		:	1
+batch_norm	:	0
+time_skip	:	3
+runs		:	1
+mini_pull	:	1
+sample_rate	:	-1
+run_time	:	5
+batch_switch_time:	-1
+batch_size_vec_string:	
+sample_switch_time:	-1
+sample_rate_vec_string:	
+lower_fanout	:	0
+cache_rate	:	0
+cache_policy	:	degree
+cache_type	:	gpu_memory
+batch_switch_acc:	-1
+pipelines	:	1
+threads		:	-1
+mode		:	zerocopy
+best_parameter	:	0
+threshold_trans	:	-1
+cache_rate_start	:	0
+cache_rate_end	:	0
+cache_rate_num	:	0
+trans_threshold_start	:	0
+trans_threshold_end	:	0
+trans_threshold_num	:	0
+block_size	:	256
+cache_exp	:	0
+part_num	:	0
+part_algo	:	
+part_dim	:	0
+target_degree	:	0
+------------------input info--------------
+NeutronStar::Preprocessing[Generate Full Replicated Graph Topo]
+------------------finish graph preprocessing--------------
+
+read_finish
+2024-12-19 19:06:24 [GCN_GPU_NEIGHBOR.hpp:1333 :run] INFO  - GNNmini::[Dist.GPU.GCNimpl] running [3] Epoches
+
+destrory_stream 0x5ad88ade30a0destory_Stream is done
+set cuda_steram 0x5ad88ade30a0 to 0x5ad8eb997960
+set cuda_steram 0x5ad8eb997960 to 0x5ad8eb997960
+2024-12-19 19:06:24 [ntsSampler.hpp:261 :update_batch_size] DEBUG - batch_size switch to 65536
+train sampler 25, 10, 
+2024-12-19 19:06:24 [ntsSampler.hpp:261 :update_batch_size] DEBUG - batch_size switch to 65536
+2024-12-19 19:06:24 [ntsSampler.hpp:261 :update_batch_size] DEBUG - batch_size switch to 23831
+val sampler 25, 10, 
+val subgraph sampler 25, 10, 
+2024-12-19 19:06:24 [ntsSampler.hpp:261 :update_batch_size] DEBUG - batch_size switch to 65536
+test sampler 25, 10, 
+test subgraph sampler 25, 10, 
+2024-12-19 19:06:24 [GCN_GPU_NEIGHBOR.hpp:1415 :run] INFO  - label rate: 1.000, train/val/test: (153431/23831/55703) (0.659/0.102/0.239)
+2024-12-19 19:06:24 [GCN_GPU_NEIGHBOR.hpp:1423 :run] DEBUG - iterations 2147483647 config_run_time 5.000
+2024-12-19 19:06:24 [GCN_GPU_NEIGHBOR.hpp:1430 :run] DEBUG - start get_gpu_idle_mem_pipe()
+2024-12-19 19:06:25 [GCN_GPU_NEIGHBOR.hpp:1200 :get_gpu_idle_mem_pipe] DEBUG - get_gpu_idle_mem_pipe(): epoch 0 used 3733.000 max_used 3733.000 total 81050.625
+2024-12-19 19:06:25 [GCN_GPU_NEIGHBOR.hpp:1432 :run] DEBUG - release gpu memory
+2024-12-19 19:06:25 [GCN_GPU_NEIGHBOR.hpp:1435 :run] DEBUG - used 2495.000 total 81050.625 (after emptyCache)
+2024-12-19 19:06:25 [GCN_GPU_NEIGHBOR.hpp:1217 :determine_cache_node_idx] DEBUG - cache_node_num 232965 (1.000)
+2024-12-19 19:06:25 [GCN_GPU_NEIGHBOR.hpp:1236 :determine_cache_node_idx] DEBUG - cache_high_degree
+2024-12-19 19:06:25 [GCN_GPU_NEIGHBOR.hpp:945 :mark_cache_node] DEBUG - cache_node_num 232965 tmp_idx 232965
+2024-12-19 19:06:25 [GCN_GPU_NEIGHBOR.hpp:922 :gater_cpu_cache_feature_and_trans_to_gpu] DEBUG - start trans to gpu
+2024-12-19 19:06:25 [GCN_GPU_NEIGHBOR.hpp:1441 :run] DEBUG - used 3031.000 total 81050.625 (after cache feature)
+2024-12-19 19:06:25 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2024-12-19 19:06:27 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 000 train_loss 3.692 train_acc 0.042 val_loss 3.107 val_acc 0.205 test_acc 0.205 train_time 0.711(sample 0.188 trans 0.025 graph 0.448 nn 0.001) val_time 0.192, gcn_run_time 0.711) batch_size (65536, 23831)
+2024-12-19 19:06:27 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2024-12-19 19:06:28 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 001 train_loss 2.957 train_acc 0.287 val_loss 2.518 val_acc 0.522 test_acc 0.517 train_time 0.665(sample 0.148 trans 0.025 graph 0.443 nn 0.001) val_time 0.193, gcn_run_time 1.376) batch_size (65536, 23831)
+2024-12-19 19:06:28 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2024-12-19 19:06:29 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 002 train_loss 2.543 train_acc 0.480 val_loss 2.111 val_acc 0.551 test_acc 0.550 train_time 0.644(sample 0.133 trans 0.025 graph 0.438 nn 0.001) val_time 0.184, gcn_run_time 2.020) batch_size (65536, 23831)
+2024-12-19 19:06:29 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2024-12-19 19:06:30 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 003 train_loss 2.231 train_acc 0.518 val_loss 1.814 val_acc 0.570 test_acc 0.566 train_time 0.650(sample 0.132 trans 0.025 graph 0.444 nn 0.001) val_time 0.174, gcn_run_time 2.670) batch_size (65536, 23831)
+2024-12-19 19:06:30 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2024-12-19 19:06:31 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 004 train_loss 1.987 train_acc 0.544 val_loss 1.592 val_acc 0.614 test_acc 0.610 train_time 0.653(sample 0.133 trans 0.025 graph 0.447 nn 0.001) val_time 0.170, gcn_run_time 3.323) batch_size (65536, 23831)
+2024-12-19 19:06:31 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2024-12-19 19:06:32 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 005 train_loss 1.782 train_acc 0.593 val_loss 1.399 val_acc 0.668 test_acc 0.663 train_time 0.652(sample 0.132 trans 0.025 graph 0.446 nn 0.001) val_time 0.172, gcn_run_time 3.975) batch_size (65536, 23831)
+2024-12-19 19:06:32 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2024-12-19 19:06:33 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 006 train_loss 1.610 train_acc 0.638 val_loss 1.226 val_acc 0.699 test_acc 0.694 train_time 0.649(sample 0.133 trans 0.025 graph 0.442 nn 0.001) val_time 0.171, gcn_run_time 4.623) batch_size (65536, 23831)
+2024-12-19 19:06:33 [GCN_GPU_NEIGHBOR.hpp:774 :Forward] DEBUG - zerocopy version
+2024-12-19 19:06:34 [GCN_GPU_NEIGHBOR.hpp:1505 :run] INFO  - Epoch 007 train_loss 1.455 train_acc 0.670 val_loss 1.076 val_acc 0.727 test_acc 0.722 train_time 0.653(sample 0.132 trans 0.025 graph 0.446 nn 0.001) val_time 0.245, gcn_run_time 5.276) batch_size (65536, 23831)
+
+main(): Best-val-acc: 0.726952 
+Val-mean-var 1 runs: 0.7270(0.0000)
+edge_file: ../../data/reddit/reddit.edge
+exec_time=50.170467(s)
