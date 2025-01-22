@@ -15,7 +15,9 @@ Copyright (c) 2021-2022 Qiange Wang, Northeastern University
 */
 #ifndef NTSBASEOP_HPP
 #define NTSBASEOP_HPP
-#include <immintrin.h>
+#ifdef __x86_64__
+#include <immintrin.h>  // For _mm_pause
+#endif
 
 #include "core/PartitionedGraph.hpp"
 #include "core/graph.hpp"

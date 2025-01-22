@@ -4062,7 +4062,9 @@ class Graph {
             bool condition = (send_queue_size <= step);
             send_queue_mutex.unlock();
             if (!condition) break;
-            __asm volatile("pause" ::: "memory");
+            #ifdef __x86_64__
+              __asm volatile("pause" ::: "memory");
+            #endif
           }
           int i = send_queue[step];
           for (int s_i = 0; s_i < sockets; s_i++) {
@@ -4172,7 +4174,9 @@ class Graph {
           bool condition = (recv_queue_size <= step);
           recv_queue_mutex.unlock();
           if (!condition) break;
-          __asm volatile("pause" ::: "memory");
+          #ifdef __x86_64__
+            __asm volatile("pause" ::: "memory");
+          #endif
         }
         int i = recv_queue[step];
         MessageBuffer **used_buffer;

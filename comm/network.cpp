@@ -429,7 +429,9 @@ MessageBuffer **NtsGraphCommunicator::recv_one_partition(int &workerId, int step
     bool condition = (recv_queue_size <= step);
     recv_queue_mutex.unlock();
     if (!condition) break;
-    __asm volatile("pause" ::: "memory");
+      #ifdef __x86_64__
+        __asm volatile("pause" ::: "memory");
+      #endif
   }
   // assign the partition id
   int i = recv_queue[step];
@@ -503,7 +505,9 @@ void NtsGraphCommunicator::send_mirror_to_master() {
       bool condition = (send_queue_size <= step);
       send_queue_mutex.unlock();
       if (!condition) break;
-      __asm volatile("pause" ::: "memory");
+      #ifdef __x86_64__
+        __asm volatile("pause" ::: "memory");
+      #endif
     }
     // send to partition i
     int i = send_queue[step];
@@ -539,7 +543,9 @@ void NtsGraphCommunicator::send_master_to_mirror_no_wait() {
       bool condition = (send_queue_size <= step);
       send_queue_mutex.unlock();
       if (!condition) break;
-      __asm volatile("pause" ::: "memory");
+      #ifdef __x86_64__
+        __asm volatile("pause" ::: "memory");
+      #endif
     }
     int i = send_queue[step];
     //          if(i==partition_id){
@@ -751,7 +757,9 @@ void NtsGraphCommunicator::send_master_to_mirror_lock_free_no_wait() {
       bool condition = (send_queue_size <= step);
       send_queue_mutex.unlock();
       if (!condition) break;
-      __asm volatile("pause" ::: "memory");
+      #ifdef __x86_64__
+        __asm volatile("pause" ::: "memory");
+      #endif
     }
     int i = send_queue[step];
     for (int s_i = 0; s_i < sockets; s_i++) {  // printf("send_success part_id %d\n",partition_id);
