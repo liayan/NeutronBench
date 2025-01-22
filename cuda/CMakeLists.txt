@@ -6,7 +6,7 @@ file(GLOB_RECURSE CURRENT_HEADERS &.hpp *.cuh *.h)
 file(GLOB CURRENT_SOURCES *.cu *.cpp)
 
 cuda_select_nvcc_arch_flags(ARCH_FLAGS)
-set(CUDA_NVCC_FLAGS "${ARCH_FLAGS} -std=c++14 -O3 -G -g")
+set(CUDA_NVCC_FLAGS "${ARCH_FLAGS} -std=c++17 -O3 -G -g")
 message(STATUS "CUDA_NVCC_FLAGS: ${CUDA_NVCC_FLAGS}" )
 
 source_group("Include" FILES ${CURRENT_HEADERS})
