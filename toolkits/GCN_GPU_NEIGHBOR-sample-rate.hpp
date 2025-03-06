@@ -886,13 +886,13 @@ class GCN_GPU_NEIGHBOR_SAMPLE_RATE_impl {
 
   void saveW(std::string suffix = "") {
     for (int i = 0; i < layers; ++i) {
-      P[i]->save_W("/workspace/Neutron//saved_modules", graph->config->dataset_name + suffix, i);
+      P[i]->save_W("/workspace/NeutronBench//saved_modules", graph->config->dataset_name + suffix, i);
     }
   }
 
   void loadW(std::string suffix = "") {
     for (int i = 0; i < layers; ++i) {
-      P[i]->load_W("/workspace/Neutron/saved_modules", graph->config->dataset_name + suffix, i);
+      P[i]->load_W("/workspace/NeutronBench/saved_modules", graph->config->dataset_name + suffix, i);
     }
   }
 
