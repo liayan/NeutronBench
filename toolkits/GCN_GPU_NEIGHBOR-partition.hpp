@@ -251,7 +251,7 @@ class GCN_GPU_NEIGHBOR_partition_impl {
 
     std::string part_file = "/workspace/NeutronBench/exp/Partition/partition/partition_result/" +
                             graph->config->part_algo + "-" + graph->config->dataset_name + "-part" +
-                            to_string(graph->config->part_num) + "-info.txt";
+                            to_string(graph->config->part_num) + ".txt";
     std::ifstream fin;
     std::cout << "read_file " << part_file << std::endl;
     fin.open(part_file.c_str(), std::ios::in);
