@@ -249,7 +249,7 @@ class GCN_GPU_NEIGHBOR_partition_impl {
     partition_nodes.resize(partition_num);
     train_id.resize(partition_num);
 
-    std::string part_file = "/home/yuanh/neutron-sanzo/exp/Partition/partition/partition_result_part_info/" +
+    std::string part_file = "/workspace/Neutron/exp/Partition/partition/partition_result/" +
                             graph->config->part_algo + "-" + graph->config->dataset_name + "-part" +
                             to_string(graph->config->part_num) + "-info.txt";
     std::ifstream fin;
@@ -330,7 +330,7 @@ class GCN_GPU_NEIGHBOR_partition_impl {
     for (int i = 0; i < partition_num; ++i) {
       train_id[i].clear();
     }
-    std::string part_file2 = "/home/yuanh/neutron-sanzo/exp/Partition/partition/partition_result_part_info/" +
+    std::string part_file2 = "/workspace/Neutron/exp/Partition/partition/partition_result//" +
                              graph->config->part_algo + "-" + graph->config->dataset_name + "-part" +
                              to_string(graph->config->part_num) + "-traininfo.txt";
     std::cout << "read_file " << part_file2 << std::endl;
