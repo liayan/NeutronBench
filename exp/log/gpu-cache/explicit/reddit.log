@@ -1,0 +1,90 @@
+algorithm	:	GCNNEIGHBORGPUEXP3
+vertices	:	232965
+epochs		:	3
+layers		:	602-128-41
+fanout		:	10,25
+val_fanout	:	
+batch_size	:	6000
+val_batch_size	:	0
+batch_type	:	shuffle
+del_frac	:	0
+dataset:	:	reddit
+edge_file	:	../data/reddit/reddit.edge
+feature_file	:	../data/reddit/reddit.feat
+label_file	:	../data/reddit/reddit.label
+mask_file	:	../data/reddit/reddit.mask
+proc_overlap	:	0
+proc_local	:	0
+proc_cuda	:	0
+proc_rep	:	0
+lock_free	:	1
+optim_kernel	:	0
+learn_rate	:	0.01
+weight_decay	:	0.0001
+decay_rate	:	0.97
+decay_epoch	:	100
+drop_rate	:	0.5
+classes		:	1
+batch_norm	:	0
+time_skip	:	1
+runs		:	1
+mini_pull	:	1
+sample_rate	:	-1
+run_time	:	-1
+batch_switch_time:	-1
+batch_size_vec_string:	
+sample_switch_time:	-1
+sample_rate_vec_string:	
+lower_fanout	:	0
+cache_rate	:	0
+cache_policy	:	none
+cache_type	:	none
+batch_switch_acc:	-1
+pipelines	:	1
+threads		:	-1
+mode		:	explicit
+best_parameter	:	0
+threshold_trans	:	-1
+cache_rate_start	:	0
+cache_rate_end	:	0
+cache_rate_num	:	0
+trans_threshold_start	:	0
+trans_threshold_end	:	0
+trans_threshold_num	:	0
+block_size	:	256
+cache_exp	:	0
+part_num	:	0
+part_algo	:	
+part_dim	:	0
+target_degree	:	0
+------------------input info--------------
+NeutronStar::Preprocessing[Generate Full Replicated Graph Topo]
+------------------finish graph preprocessing--------------
+
+read_finish
+2025-03-26 18:43:50 [GCN_GPU_NEIGHBOR-exp3.hpp:584 :init_nn] DEBUG - read feature_label_mask is done
+2025-03-26 18:43:50 [GCN_GPU_NEIGHBOR-exp3.hpp:1592 :run] INFO  - GNNmini::[Dist.GPU.GCNimpl] running [3] Epoches
+
+2025-03-26 18:43:50 [GCN_GPU_NEIGHBOR-exp3.hpp:1601 :run] INFO  - label rate: 1.000, train/val/test: (153431/23831/55703) (0.659/0.102/0.239)
+destrory_stream 0x5aca0417b430destory_Stream is done
+set cuda_steram 0x5aca0417b430 to 0x5aca042c0b00
+set cuda_steram 0x5aca042c0b00 to 0x5aca042c0b00
+2025-03-26 18:43:50 [ntsSampler.hpp:261 :update_batch_size] DEBUG - batch_size switch to 6000
+2025-03-26 18:43:50 [ntsSampler.hpp:261 :update_batch_size] DEBUG - batch_size switch to 6000
+2025-03-26 18:43:50 [ntsSampler.hpp:261 :update_batch_size] DEBUG - batch_size switch to 6000
+2025-03-26 18:43:50 [GCN_GPU_NEIGHBOR-exp3.hpp:1672 :run] DEBUG - There is no cache_type!
+2025-03-26 18:43:50 [GCN_GPU_NEIGHBOR-exp3.hpp:1685 :run] DEBUG - gcn_start_run_at 1743014630.427
+2025-03-26 18:43:50 [GCN_GPU_NEIGHBOR-exp3.hpp:1470 :Forward] DEBUG - explicit version
+2025-03-26 18:43:56 [GCN_GPU_NEIGHBOR-exp3.hpp:1497 :Forward] DEBUG - Train ACC 121835/153431 0.794
+2025-03-26 18:43:56 [GCN_GPU_NEIGHBOR-exp3.hpp:1519 :Forward] INFO  - Epoch 000 epoch_time 5.864 sample_time 0.467 gather_time 1.655 trans_time 1.352 train_time 2.390 cache_rate 0.000 cache_hit_rate 0.000 trans_memory 0.000M gpu_mem 3641.000M
+2025-03-26 18:43:56 [GCN_GPU_NEIGHBOR-exp3.hpp:1470 :Forward] DEBUG - explicit version
+2025-03-26 18:44:01 [GCN_GPU_NEIGHBOR-exp3.hpp:1497 :Forward] DEBUG - Train ACC 139345/153431 0.908
+2025-03-26 18:44:01 [GCN_GPU_NEIGHBOR-exp3.hpp:1519 :Forward] INFO  - Epoch 001 epoch_time 4.821 sample_time 0.439 gather_time 1.643 trans_time 1.344 train_time 1.395 cache_rate 0.000 cache_hit_rate 0.000 trans_memory 0.000M gpu_mem 3641.000M
+2025-03-26 18:44:01 [GCN_GPU_NEIGHBOR-exp3.hpp:1470 :Forward] DEBUG - explicit version
+2025-03-26 18:44:06 [GCN_GPU_NEIGHBOR-exp3.hpp:1497 :Forward] DEBUG - Train ACC 140529/153431 0.916
+2025-03-26 18:44:06 [GCN_GPU_NEIGHBOR-exp3.hpp:1519 :Forward] INFO  - Epoch 002 epoch_time 4.857 sample_time 0.444 gather_time 1.659 trans_time 1.370 train_time 1.384 cache_rate 0.000 cache_hit_rate 0.000 trans_memory 0.000M gpu_mem 4045.000M
+2025-03-26 18:44:06 [GCN_GPU_NEIGHBOR-exp3.hpp:1707 :run] DEBUG - average 2 epoch
+2025-03-26 18:44:06 [GCN_GPU_NEIGHBOR-exp3.hpp:1710 :run] DEBUG - epoch 3 time_skip 1 one_epoch_time 4.867, cache_init_time 0.000
+2025-03-26 18:44:06 [GCN_GPU_NEIGHBOR-exp3.hpp:1721 :run] DEBUG - gcn_run_time - sum_4_time 0.000
+2025-03-26 18:44:06 [GCN_GPU_NEIGHBOR-exp3.hpp:1738 :run] DEBUG - dataset reddit cache_rate 0.000 batch_size 6000 used_memmory 4045.000M gcn_run_time 4.839 gcn_sample_time 0.442 (0.091)  gcn_gather_time 1.651 (0.341) gcn_trans_time 1.357 (0.280) gcn_train_time 1.390 (0.287); prepare_time 3.450 (0.713) compute_time 1.390 (0.287) cache_hit_rate 0.000 trans_memory 0.000M
+exec_time=55.206654(s)

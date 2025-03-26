@@ -1,0 +1,132 @@
+algorithm	:	GCNNEIGHBORGPUTRANSEXP
+vertices	:	232965
+epochs		:	3
+layers		:	602-128-41
+fanout		:	10,25
+val_fanout	:	
+batch_size	:	6000
+val_batch_size	:	0
+batch_type	:	shuffle
+del_frac	:	0
+dataset:	:	reddit
+edge_file	:	../data/reddit/reddit.edge
+feature_file	:	../data/reddit/reddit.feat
+label_file	:	../data/reddit/reddit.label
+mask_file	:	../data/reddit/reddit.mask
+proc_overlap	:	0
+proc_local	:	0
+proc_cuda	:	0
+proc_rep	:	0
+lock_free	:	1
+optim_kernel	:	0
+learn_rate	:	0.01
+weight_decay	:	0.0001
+decay_rate	:	0.97
+decay_epoch	:	100
+drop_rate	:	0.5
+classes		:	1
+batch_norm	:	0
+time_skip	:	0
+runs		:	1
+mini_pull	:	1
+sample_rate	:	-1
+run_time	:	-1
+batch_switch_time:	-1
+batch_size_vec_string:	
+sample_switch_time:	-1
+sample_rate_vec_string:	
+lower_fanout	:	0
+cache_rate	:	0
+cache_policy	:	degree
+cache_type	:	none
+batch_switch_acc:	-1
+pipelines	:	3
+threads		:	-1
+mode		:	pipeline
+best_parameter	:	0
+threshold_trans	:	-1
+cache_rate_start	:	0
+cache_rate_end	:	0
+cache_rate_num	:	0
+trans_threshold_start	:	0
+trans_threshold_end	:	1
+trans_threshold_num	:	50
+block_size	:	256
+cache_exp	:	0
+part_num	:	0
+part_algo	:	
+part_dim	:	0
+target_degree	:	0
+------------------input info--------------
+NeutronStar::Preprocessing[Generate Full Replicated Graph Topo]
+------------------finish graph preprocessing--------------
+
+read_finish
+2025-03-26 18:24:28 [GCN_GPU_NEIGHBOR-trans-exp.hpp:555 :init_nn] DEBUG - read feature_label_mask is done
+2025-03-26 18:24:28 [GCN_GPU_NEIGHBOR-trans-exp.hpp:1097 :run] INFO  - label rate: 1.000, train/val/test: (153431/23831/55703) (0.659/0.102/0.239)
+destrory_stream 0x59ac72b8e530destory_Stream is done
+set cuda_steram 0x59ac72b8e530 to 0x59ac72a2ac70
+set cuda_steram 0x59ac72a2ac70 to 0x59ac72a2ac70
+destrory_stream 0x59ac72a2f430destory_Stream is done
+set cuda_steram 0x59ac72a2f430 to 0x59ac72a2adf0
+set cuda_steram 0x59ac72a2adf0 to 0x59ac72a2adf0
+destrory_stream 0x59ac72b747a0destory_Stream is done
+set cuda_steram 0x59ac72b747a0 to 0x59ac72a2af70
+set cuda_steram 0x59ac72a2af70 to 0x59ac72a2af70
+2025-03-26 18:24:28 [ntsSampler.hpp:261 :update_batch_size] DEBUG - batch_size switch to 6000
+2025-03-26 18:24:28 [GCN_GPU_NEIGHBOR-trans-exp.hpp:498 :determine_cache_node_seq] DEBUG - cache_high_degree
+2025-03-26 18:24:28 [GCN_GPU_NEIGHBOR-trans-exp.hpp:1080 :Forward] INFO  - Epoch 000 epoch_time 0.464 cache_rate 0.000 cache_hit_rate 0.000
+2025-03-26 18:24:29 [GCN_GPU_NEIGHBOR-trans-exp.hpp:1080 :Forward] INFO  - Epoch 001 epoch_time 0.434 cache_rate 0.000 cache_hit_rate 0.000
+2025-03-26 18:24:29 [GCN_GPU_NEIGHBOR-trans-exp.hpp:1080 :Forward] INFO  - Epoch 002 epoch_time 0.435 cache_rate 0.000 cache_hit_rate 0.000
+2025-03-26 18:24:29 [GCN_GPU_NEIGHBOR-trans-exp.hpp:1140 :run] DEBUG - epoch 000, thrashold_rate 0.000 suit explicit trans block rate 1.000(0.000) (explicit_rate_num 78)
+2025-03-26 18:24:29 [GCN_GPU_NEIGHBOR-trans-exp.hpp:1140 :run] DEBUG - epoch 001, thrashold_rate 0.020 suit explicit trans block rate 1.000(0.000) (explicit_rate_num 78)
+2025-03-26 18:24:29 [GCN_GPU_NEIGHBOR-trans-exp.hpp:1140 :run] DEBUG - epoch 002, thrashold_rate 0.040 suit explicit trans block rate 1.000(0.000) (explicit_rate_num 78)
+2025-03-26 18:24:29 [GCN_GPU_NEIGHBOR-trans-exp.hpp:1140 :run] DEBUG - epoch 003, thrashold_rate 0.060 suit explicit trans block rate 0.999(0.000) (explicit_rate_num 78)
+2025-03-26 18:24:29 [GCN_GPU_NEIGHBOR-trans-exp.hpp:1140 :run] DEBUG - epoch 004, thrashold_rate 0.080 suit explicit trans block rate 0.999(0.000) (explicit_rate_num 78)
+2025-03-26 18:24:29 [GCN_GPU_NEIGHBOR-trans-exp.hpp:1140 :run] DEBUG - epoch 005, thrashold_rate 0.100 suit explicit trans block rate 0.998(0.000) (explicit_rate_num 78)
+2025-03-26 18:24:29 [GCN_GPU_NEIGHBOR-trans-exp.hpp:1140 :run] DEBUG - epoch 006, thrashold_rate 0.120 suit explicit trans block rate 0.997(0.000) (explicit_rate_num 78)
+2025-03-26 18:24:29 [GCN_GPU_NEIGHBOR-trans-exp.hpp:1140 :run] DEBUG - epoch 007, thrashold_rate 0.140 suit explicit trans block rate 0.994(0.000) (explicit_rate_num 78)
+2025-03-26 18:24:29 [GCN_GPU_NEIGHBOR-trans-exp.hpp:1140 :run] DEBUG - epoch 008, thrashold_rate 0.160 suit explicit trans block rate 0.992(0.000) (explicit_rate_num 78)
+2025-03-26 18:24:29 [GCN_GPU_NEIGHBOR-trans-exp.hpp:1140 :run] DEBUG - epoch 009, thrashold_rate 0.180 suit explicit trans block rate 0.989(0.000) (explicit_rate_num 78)
+2025-03-26 18:24:29 [GCN_GPU_NEIGHBOR-trans-exp.hpp:1140 :run] DEBUG - epoch 010, thrashold_rate 0.200 suit explicit trans block rate 0.986(0.000) (explicit_rate_num 78)
+2025-03-26 18:24:29 [GCN_GPU_NEIGHBOR-trans-exp.hpp:1140 :run] DEBUG - epoch 011, thrashold_rate 0.220 suit explicit trans block rate 0.983(0.000) (explicit_rate_num 78)
+2025-03-26 18:24:29 [GCN_GPU_NEIGHBOR-trans-exp.hpp:1140 :run] DEBUG - epoch 012, thrashold_rate 0.240 suit explicit trans block rate 0.980(0.000) (explicit_rate_num 78)
+2025-03-26 18:24:29 [GCN_GPU_NEIGHBOR-trans-exp.hpp:1140 :run] DEBUG - epoch 013, thrashold_rate 0.260 suit explicit trans block rate 0.974(0.000) (explicit_rate_num 78)
+2025-03-26 18:24:29 [GCN_GPU_NEIGHBOR-trans-exp.hpp:1140 :run] DEBUG - epoch 014, thrashold_rate 0.280 suit explicit trans block rate 0.970(0.000) (explicit_rate_num 78)
+2025-03-26 18:24:29 [GCN_GPU_NEIGHBOR-trans-exp.hpp:1140 :run] DEBUG - epoch 015, thrashold_rate 0.300 suit explicit trans block rate 0.964(0.000) (explicit_rate_num 78)
+2025-03-26 18:24:29 [GCN_GPU_NEIGHBOR-trans-exp.hpp:1140 :run] DEBUG - epoch 016, thrashold_rate 0.320 suit explicit trans block rate 0.958(0.000) (explicit_rate_num 78)
+2025-03-26 18:24:29 [GCN_GPU_NEIGHBOR-trans-exp.hpp:1140 :run] DEBUG - epoch 017, thrashold_rate 0.340 suit explicit trans block rate 0.952(0.000) (explicit_rate_num 78)
+2025-03-26 18:24:29 [GCN_GPU_NEIGHBOR-trans-exp.hpp:1140 :run] DEBUG - epoch 018, thrashold_rate 0.360 suit explicit trans block rate 0.944(0.000) (explicit_rate_num 78)
+2025-03-26 18:24:29 [GCN_GPU_NEIGHBOR-trans-exp.hpp:1140 :run] DEBUG - epoch 019, thrashold_rate 0.380 suit explicit trans block rate 0.932(0.000) (explicit_rate_num 78)
+2025-03-26 18:24:29 [GCN_GPU_NEIGHBOR-trans-exp.hpp:1140 :run] DEBUG - epoch 020, thrashold_rate 0.400 suit explicit trans block rate 0.922(0.000) (explicit_rate_num 78)
+2025-03-26 18:24:29 [GCN_GPU_NEIGHBOR-trans-exp.hpp:1140 :run] DEBUG - epoch 021, thrashold_rate 0.420 suit explicit trans block rate 0.911(0.000) (explicit_rate_num 78)
+2025-03-26 18:24:29 [GCN_GPU_NEIGHBOR-trans-exp.hpp:1140 :run] DEBUG - epoch 022, thrashold_rate 0.440 suit explicit trans block rate 0.899(0.000) (explicit_rate_num 78)
+2025-03-26 18:24:29 [GCN_GPU_NEIGHBOR-trans-exp.hpp:1140 :run] DEBUG - epoch 023, thrashold_rate 0.460 suit explicit trans block rate 0.887(0.000) (explicit_rate_num 78)
+2025-03-26 18:24:29 [GCN_GPU_NEIGHBOR-trans-exp.hpp:1140 :run] DEBUG - epoch 024, thrashold_rate 0.480 suit explicit trans block rate 0.874(0.000) (explicit_rate_num 78)
+2025-03-26 18:24:29 [GCN_GPU_NEIGHBOR-trans-exp.hpp:1140 :run] DEBUG - epoch 025, thrashold_rate 0.500 suit explicit trans block rate 0.853(0.000) (explicit_rate_num 78)
+2025-03-26 18:24:29 [GCN_GPU_NEIGHBOR-trans-exp.hpp:1140 :run] DEBUG - epoch 026, thrashold_rate 0.520 suit explicit trans block rate 0.838(0.000) (explicit_rate_num 78)
+2025-03-26 18:24:29 [GCN_GPU_NEIGHBOR-trans-exp.hpp:1140 :run] DEBUG - epoch 027, thrashold_rate 0.540 suit explicit trans block rate 0.822(0.000) (explicit_rate_num 78)
+2025-03-26 18:24:29 [GCN_GPU_NEIGHBOR-trans-exp.hpp:1140 :run] DEBUG - epoch 028, thrashold_rate 0.560 suit explicit trans block rate 0.805(0.000) (explicit_rate_num 78)
+2025-03-26 18:24:29 [GCN_GPU_NEIGHBOR-trans-exp.hpp:1140 :run] DEBUG - epoch 029, thrashold_rate 0.580 suit explicit trans block rate 0.787(0.000) (explicit_rate_num 78)
+2025-03-26 18:24:29 [GCN_GPU_NEIGHBOR-trans-exp.hpp:1140 :run] DEBUG - epoch 030, thrashold_rate 0.600 suit explicit trans block rate 0.769(0.000) (explicit_rate_num 78)
+2025-03-26 18:24:29 [GCN_GPU_NEIGHBOR-trans-exp.hpp:1140 :run] DEBUG - epoch 031, thrashold_rate 0.620 suit explicit trans block rate 0.750(0.001) (explicit_rate_num 78)
+2025-03-26 18:24:29 [GCN_GPU_NEIGHBOR-trans-exp.hpp:1140 :run] DEBUG - epoch 032, thrashold_rate 0.640 suit explicit trans block rate 0.721(0.001) (explicit_rate_num 78)
+2025-03-26 18:24:29 [GCN_GPU_NEIGHBOR-trans-exp.hpp:1140 :run] DEBUG - epoch 033, thrashold_rate 0.660 suit explicit trans block rate 0.701(0.001) (explicit_rate_num 78)
+2025-03-26 18:24:29 [GCN_GPU_NEIGHBOR-trans-exp.hpp:1140 :run] DEBUG - epoch 034, thrashold_rate 0.680 suit explicit trans block rate 0.679(0.001) (explicit_rate_num 78)
+2025-03-26 18:24:29 [GCN_GPU_NEIGHBOR-trans-exp.hpp:1140 :run] DEBUG - epoch 035, thrashold_rate 0.700 suit explicit trans block rate 0.657(0.001) (explicit_rate_num 78)
+2025-03-26 18:24:29 [GCN_GPU_NEIGHBOR-trans-exp.hpp:1140 :run] DEBUG - epoch 036, thrashold_rate 0.720 suit explicit trans block rate 0.632(0.001) (explicit_rate_num 78)
+2025-03-26 18:24:29 [GCN_GPU_NEIGHBOR-trans-exp.hpp:1140 :run] DEBUG - epoch 037, thrashold_rate 0.740 suit explicit trans block rate 0.606(0.001) (explicit_rate_num 78)
+2025-03-26 18:24:29 [GCN_GPU_NEIGHBOR-trans-exp.hpp:1140 :run] DEBUG - epoch 038, thrashold_rate 0.760 suit explicit trans block rate 0.565(0.001) (explicit_rate_num 78)
+2025-03-26 18:24:29 [GCN_GPU_NEIGHBOR-trans-exp.hpp:1140 :run] DEBUG - epoch 039, thrashold_rate 0.780 suit explicit trans block rate 0.534(0.001) (explicit_rate_num 78)
+2025-03-26 18:24:29 [GCN_GPU_NEIGHBOR-trans-exp.hpp:1140 :run] DEBUG - epoch 040, thrashold_rate 0.800 suit explicit trans block rate 0.502(0.001) (explicit_rate_num 78)
+2025-03-26 18:24:29 [GCN_GPU_NEIGHBOR-trans-exp.hpp:1140 :run] DEBUG - epoch 041, thrashold_rate 0.820 suit explicit trans block rate 0.467(0.001) (explicit_rate_num 78)
+2025-03-26 18:24:29 [GCN_GPU_NEIGHBOR-trans-exp.hpp:1140 :run] DEBUG - epoch 042, thrashold_rate 0.840 suit explicit trans block rate 0.430(0.001) (explicit_rate_num 78)
+2025-03-26 18:24:29 [GCN_GPU_NEIGHBOR-trans-exp.hpp:1140 :run] DEBUG - epoch 043, thrashold_rate 0.860 suit explicit trans block rate 0.389(0.001) (explicit_rate_num 78)
+2025-03-26 18:24:29 [GCN_GPU_NEIGHBOR-trans-exp.hpp:1140 :run] DEBUG - epoch 044, thrashold_rate 0.880 suit explicit trans block rate 0.318(0.001) (explicit_rate_num 78)
+2025-03-26 18:24:29 [GCN_GPU_NEIGHBOR-trans-exp.hpp:1140 :run] DEBUG - epoch 045, thrashold_rate 0.900 suit explicit trans block rate 0.267(0.001) (explicit_rate_num 78)
+2025-03-26 18:24:29 [GCN_GPU_NEIGHBOR-trans-exp.hpp:1140 :run] DEBUG - epoch 046, thrashold_rate 0.920 suit explicit trans block rate 0.215(0.001) (explicit_rate_num 78)
+2025-03-26 18:24:29 [GCN_GPU_NEIGHBOR-trans-exp.hpp:1140 :run] DEBUG - epoch 047, thrashold_rate 0.940 suit explicit trans block rate 0.166(0.000) (explicit_rate_num 78)
+2025-03-26 18:24:29 [GCN_GPU_NEIGHBOR-trans-exp.hpp:1140 :run] DEBUG - epoch 048, thrashold_rate 0.960 suit explicit trans block rate 0.122(0.000) (explicit_rate_num 78)
+2025-03-26 18:24:29 [GCN_GPU_NEIGHBOR-trans-exp.hpp:1140 :run] DEBUG - epoch 049, thrashold_rate 0.980 suit explicit trans block rate 0.082(0.000) (explicit_rate_num 78)
+2025-03-26 18:24:29 [GCN_GPU_NEIGHBOR-trans-exp.hpp:1140 :run] DEBUG - epoch 050, thrashold_rate 1.000 suit explicit trans block rate 0.000(0.000) (explicit_rate_num 78)
+exec_time=41.111357(s)

@@ -1,0 +1,99 @@
+algorithm	:	GCNNEIGHBORGPUEXP3
+vertices	:	232965
+epochs		:	3
+layers		:	602-128-41
+fanout		:	10,25
+val_fanout	:	
+batch_size	:	6000
+val_batch_size	:	0
+batch_type	:	shuffle
+del_frac	:	0
+dataset:	:	reddit
+edge_file	:	../data/reddit/reddit.edge
+feature_file	:	../data/reddit/reddit.feat
+label_file	:	../data/reddit/reddit.label
+mask_file	:	../data/reddit/reddit.mask
+proc_overlap	:	0
+proc_local	:	0
+proc_cuda	:	0
+proc_rep	:	0
+lock_free	:	1
+optim_kernel	:	0
+learn_rate	:	0.01
+weight_decay	:	0.0001
+decay_rate	:	0.97
+decay_epoch	:	100
+drop_rate	:	0.5
+classes		:	1
+batch_norm	:	0
+time_skip	:	1
+runs		:	1
+mini_pull	:	1
+sample_rate	:	-1
+run_time	:	-1
+batch_switch_time:	-1
+batch_size_vec_string:	
+sample_switch_time:	-1
+sample_rate_vec_string:	
+lower_fanout	:	0
+cache_rate	:	0
+cache_policy	:	none
+cache_type	:	none
+batch_switch_acc:	-1
+pipelines	:	3
+threads		:	-1
+mode		:	pipeline
+best_parameter	:	0
+threshold_trans	:	-1
+cache_rate_start	:	0
+cache_rate_end	:	0
+cache_rate_num	:	0
+trans_threshold_start	:	0
+trans_threshold_end	:	0
+trans_threshold_num	:	0
+block_size	:	256
+cache_exp	:	0
+part_num	:	0
+part_algo	:	
+part_dim	:	0
+target_degree	:	0
+------------------input info--------------
+NeutronStar::Preprocessing[Generate Full Replicated Graph Topo]
+------------------finish graph preprocessing--------------
+
+read_finish
+2025-03-26 18:47:20 [GCN_GPU_NEIGHBOR-exp3.hpp:584 :init_nn] DEBUG - read feature_label_mask is done
+2025-03-26 18:47:20 [GCN_GPU_NEIGHBOR-exp3.hpp:1592 :run] INFO  - GNNmini::[Dist.GPU.GCNimpl] running [3] Epoches
+
+2025-03-26 18:47:20 [GCN_GPU_NEIGHBOR-exp3.hpp:1601 :run] INFO  - label rate: 1.000, train/val/test: (153431/23831/55703) (0.659/0.102/0.239)
+destrory_stream 0x588f16f8b9b0destory_Stream is done
+set cuda_steram 0x588f16f8b9b0 to 0x588f16e27d50
+set cuda_steram 0x588f16e27d50 to 0x588f16e27d50
+destrory_stream 0x588f16e2c550destory_Stream is done
+set cuda_steram 0x588f16e2c550 to 0x588f16e27ed0
+set cuda_steram 0x588f16e27ed0 to 0x588f16e27ed0
+destrory_stream 0x588f16f71c60destory_Stream is done
+set cuda_steram 0x588f16f71c60 to 0x588f16e28050
+set cuda_steram 0x588f16e28050 to 0x588f16e28050
+2025-03-26 18:47:20 [ntsSampler.hpp:261 :update_batch_size] DEBUG - batch_size switch to 6000
+2025-03-26 18:47:20 [ntsSampler.hpp:261 :update_batch_size] DEBUG - batch_size switch to 6000
+2025-03-26 18:47:20 [ntsSampler.hpp:261 :update_batch_size] DEBUG - batch_size switch to 6000
+2025-03-26 18:47:20 [GCN_GPU_NEIGHBOR-exp3.hpp:1672 :run] DEBUG - There is no cache_type!
+2025-03-26 18:47:20 [GCN_GPU_NEIGHBOR-exp3.hpp:1685 :run] DEBUG - gcn_start_run_at 1743014840.314
+2025-03-26 18:47:20 [GCN_GPU_NEIGHBOR-exp3.hpp:1464 :Forward] DEBUG - pipeline version
+2025-03-26 18:47:20 [GCN_GPU_NEIGHBOR-exp3.hpp:741 :pipeline_version] DEBUG - pipeline 3
+2025-03-26 18:47:23 [GCN_GPU_NEIGHBOR-exp3.hpp:1497 :Forward] DEBUG - Train ACC 120051/153431 0.782
+2025-03-26 18:47:23 [GCN_GPU_NEIGHBOR-exp3.hpp:1519 :Forward] INFO  - Epoch 000 epoch_time 4.021 sample_time 0.492 gather_time 0.000 trans_time 0.715 train_time 2.814 cache_rate 0.000 cache_hit_rate 0.000 trans_memory 0.000M gpu_mem 7025.000M
+2025-03-26 18:47:23 [GCN_GPU_NEIGHBOR-exp3.hpp:1464 :Forward] DEBUG - pipeline version
+2025-03-26 18:47:23 [GCN_GPU_NEIGHBOR-exp3.hpp:741 :pipeline_version] DEBUG - pipeline 3
+2025-03-26 18:47:25 [GCN_GPU_NEIGHBOR-exp3.hpp:1497 :Forward] DEBUG - Train ACC 139086/153431 0.907
+2025-03-26 18:47:25 [GCN_GPU_NEIGHBOR-exp3.hpp:1519 :Forward] INFO  - Epoch 001 epoch_time 2.938 sample_time 0.446 gather_time 0.000 trans_time 0.710 train_time 1.782 cache_rate 0.000 cache_hit_rate 0.000 trans_memory 0.000M gpu_mem 7833.000M
+2025-03-26 18:47:25 [GCN_GPU_NEIGHBOR-exp3.hpp:1464 :Forward] DEBUG - pipeline version
+2025-03-26 18:47:25 [GCN_GPU_NEIGHBOR-exp3.hpp:741 :pipeline_version] DEBUG - pipeline 3
+2025-03-26 18:47:26 [GCN_GPU_NEIGHBOR-exp3.hpp:1497 :Forward] DEBUG - Train ACC 140379/153431 0.915
+2025-03-26 18:47:26 [GCN_GPU_NEIGHBOR-exp3.hpp:1519 :Forward] INFO  - Epoch 002 epoch_time 2.929 sample_time 0.446 gather_time 0.000 trans_time 0.706 train_time 1.776 cache_rate 0.000 cache_hit_rate 0.000 trans_memory 0.000M gpu_mem 8237.000M
+2025-03-26 18:47:26 [GCN_GPU_NEIGHBOR-exp3.hpp:1707 :run] DEBUG - average 2 epoch
+2025-03-26 18:47:26 [GCN_GPU_NEIGHBOR-exp3.hpp:1710 :run] DEBUG - epoch 3 time_skip 1 one_epoch_time 1.831, cache_init_time 0.000
+2025-03-26 18:47:26 [GCN_GPU_NEIGHBOR-exp3.hpp:1721 :run] DEBUG - gcn_run_time - sum_4_time 0.000
+2025-03-26 18:47:26 [GCN_GPU_NEIGHBOR-exp3.hpp:1738 :run] DEBUG - dataset reddit cache_rate 0.000 batch_size 6000 used_memmory 8237.000M gcn_run_time 2.934 gcn_sample_time 0.446 (0.152)  gcn_gather_time 0.000 (0.000) gcn_trans_time 0.708 (0.241) gcn_train_time 1.779 (0.607); prepare_time 1.154 (0.393) compute_time 1.779 (0.607) cache_hit_rate 0.000 trans_memory 0.000M
+exec_time=46.524743(s)
